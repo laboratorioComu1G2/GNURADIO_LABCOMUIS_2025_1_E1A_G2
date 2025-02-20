@@ -11,8 +11,8 @@ Al final de la plantilla encontrará algunos ejemplos para enriquecer su informe
 # Práctica 1: TÍTULO PRÁCTICA
 
 ### Integrantes
-- **PRIMER INTEGRANTE** - Código
-- **SEGUNDO INTEGRANTE** - Código
+- **Duban Andretti Gutierrez Leon** - 2220396
+- **Juan José De la Rosa Medina** - 2202810
 
 Escuela de Ingenierías Eléctrica, Electrónica y de Telecomunicaciones  
 Universidad Industrial de Santander
