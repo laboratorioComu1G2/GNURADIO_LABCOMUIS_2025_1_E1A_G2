@@ -28,17 +28,12 @@ Uso de IA:
 ### Resumen
 Descripción en no más de 150 palabras del contenido de la práctica. Debe ser conciso y brindar una idea clara sobre el trabajo realizado y sus conclusiones.
 
-**Palabras clave:** de 2 a 5 palabras clave. 
+**Palabras clave:** Analizador de espectros, mediciones, GNU radio, Mediciones. 
 
 ### Introducción
-Cada práctica contará con preguntas orientadoras para la elaboración de la introducción. Por ejemplo: 
-- ¿Qué tan importante es la teoría de muestreo en el procesamiento de señales?
-- ¿Cuáles son los principales potenciales de GNURADIO en el laboratorio de comunicaciones?
-- ¿Qué pasa cuando se alcanza el límite de Nyquist?
-- ¿Qué tan alta debe ser la relación entre la frecuencia de muestreo y la frecuencia de la señal para visualizar la señal correctamente?
-- ¿Cuándo es importante interpolar una señal?
-- ¿Cuándo es importante diezmar una señal?
-- ¿Qué pasa cuando se asigna una frecuencia de muestreo inadecuada?
+En los sistemas de comunicaciones modernas, la caracterización y análisis de señales es fundamental para garantizar un desempeño adecuado y eficiente en la transmisión de información. Para ello, es indispensable comprender cómo influyen los parámetros de las fuentes de señal, las formas de onda y el entorno de transmisión tanto en el dominio del tiempo como en el de la frecuencia. Este informe tiene como objetivo analizar experimentalmente diversos aspectos relacionados con la generación, transmisión y medición de señales utilizando el USRP 2920 y equipos complementarios como el analizador de espectros y el osciloscopio. A través de una serie de preguntas clave, se exploran conceptos como la potencia, el ancho de banda, la relación señal a ruido (SNR), la respuesta en frecuencia y las pérdidas en canales inalámbricos. Además, se evalúan las limitaciones de los instrumentos empleados y se identifican aplicaciones prácticas dentro de los sistemas de comunicaciones reales, resaltando la importancia de una correcta configuración y análisis para optimizar la calidad de la señal y la robustez del enlace.
+
+En los sistemas de comunicación de la actualidad se hace necesario un correcto análisis de las señales para garantizar que la información se transmita de manera adecuada, por lo cual es impresindible comprender cómo afecta a la señal sus distintos parámetros tales como: las formas de onda, las fuentes de la señal y el entorno en el cual se está transmitiendo, además de considerar sus efectos en el tiempo y la frecuencia. A lo largo de este informe  
 
 ### Procedimiento
 Debe basarse en las acciones efectivamente realizadas durante el laboratorio, describiendo los procesos realizados y los resultados obtenidos. Para cada práctica se pueden brindar preguntas orientadoras o pasos a seguir para establecer lo que se espera lograr/estudiar/analizar/obtener/comparar. Por ejemplo:
