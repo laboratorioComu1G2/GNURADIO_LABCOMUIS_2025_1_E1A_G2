@@ -31,11 +31,32 @@ Descripción en no más de 150 palabras del contenido de la práctica. Debe ser 
 **Palabras clave:** Analizador de espectros, mediciones, GNU radio, Mediciones. 
 
 ### Introducción
-En los sistemas de comunicaciones modernas, la caracterización y análisis de señales es fundamental para garantizar un desempeño adecuado y eficiente en la transmisión de información. Para ello, es indispensable comprender cómo influyen los parámetros de las fuentes de señal, las formas de onda y el entorno de transmisión tanto en el dominio del tiempo como en el de la frecuencia. Este informe tiene como objetivo analizar experimentalmente diversos aspectos relacionados con la generación, transmisión y medición de señales utilizando el USRP 2920 y equipos complementarios como el analizador de espectros y el osciloscopio. A través de una serie de preguntas clave, se exploran conceptos como la potencia, el ancho de banda, la relación señal a ruido (SNR), la respuesta en frecuencia y las pérdidas en canales inalámbricos. Además, se evalúan las limitaciones de los instrumentos empleados y se identifican aplicaciones prácticas dentro de los sistemas de comunicaciones reales, resaltando la importancia de una correcta configuración y análisis para optimizar la calidad de la señal y la robustez del enlace.
-
-En los sistemas de comunicación de la actualidad se hace necesario un correcto análisis de las señales para garantizar que la información se transmita de manera adecuada, por lo cual es impresindible comprender cómo afecta a la señal sus distintos parámetros tales como: las formas de onda, las fuentes de la señal y el entorno en el cual se está transmitiendo, además de considerar sus efectos en el tiempo y la frecuencia. A lo largo de este informe  
+En los sistemas de comunicación de la actualidad se hace necesario un correcto análisis de las señales para garantizar que la información se transmita de manera adecuada, por lo cual es imprescindible comprender cómo afecta a la señal sus distintos parámetros tales como: las formas de onda, las fuentes de la señal y el entorno en el cual se está transmitiendo, además de considerar sus efectos en el tiempo y la frecuencia. A lo largo de este informe se tiene como objetivo analizar el comportamiento de una señal al implementarle ciertos cambios, entre estos la amplitud, la frecuencia, el ruido, la fase y su offset; todos estos cambios se podrán medir utilizando el USRP 2920 y equipos complementarios como el analizador de espectros y el osciloscopio.
 
 ### Procedimiento
+### Actividad 1: Revisión de Especificaciones de los Equipos
+   ## 1. Seleccionar Especificaciones Relevantes:
+    USRP 2920: Las especificaciones seleccionadas se muestran a continuación
+            1. Rango de frecuencia de 50 Mhz a 2.2 Ghz.
+            2. Precisión de frecuencia 2.5 ppm.
+            3. Pasos de ganancia 1.0 db.
+            4. Rango de ganancias de 0 db a 31 db.
+            5. Pasos de frecuencia menores a 1 kHz.
+            
+    Osciloscopio R&S RTB2004: Las especificaciones seleccionadas se muestran a continuación
+            1. Cantidad de canales: 4 canales analógicos.
+            2. Frecuencia de muestreo: Hasta 2.5 GSa/s.
+            3. Pantalla: Táctil capacitiva de 10.1 pulgadas, resolución 1280 x 800 píxeles.
+            4. Interfaces: USB, LAN, salida de disparo.
+            5. Ancho de banda: 70 MHz, 100 MHz, 200 MHz, hasta 300 MHz.
+
+    Analizador de Espectros R&S FPC1000: Las especificaciones seleccionadas se muestran a continuación
+            1. Rango de frecuencia: 5 kHz a 1 GHz.
+            2. Rango de atenuación 0 db a 40 db.
+            3. La entrada RF con una impedancia de 50 Ω le permite conectar un DUT al R&S FPC1000.
+            4. Precisión de frecuencia: 0.5 ppm.
+            5. Nivel de ruido de fondo (DANL): -150 dBm.
+
 Debe basarse en las acciones efectivamente realizadas durante el laboratorio, describiendo los procesos realizados y los resultados obtenidos. Para cada práctica se pueden brindar preguntas orientadoras o pasos a seguir para establecer lo que se espera lograr/estudiar/analizar/obtener/comparar. Por ejemplo:
 - Describa los procesos realizados en el laboratorio  y los resultados obtenidos.
 - ¿Cómo se alcanza el límite de Nyquist y que pasa cuando se disminuye de este?
