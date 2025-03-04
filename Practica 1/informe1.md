@@ -70,8 +70,20 @@ Al realizar el aumento en la amplitud se puede ver como la señal cosenoidal aum
 <div align="center">
   <img src="https://github.com/user-attachments/assets/dd62690e-d5bc-4325-92d2-31e8384a0041" title="señal Modificada En Amplitud" alt="Texto alternativo" width="600" height="400"/>
 </div>
-### Conclusiones
-Se sintetizan los principales aportes y puntos relevantes de la práctica, evitando repetir lo ya consignado en las otras secciones del informe. 
+
+
+
+#################################################################
+### Actividad 3: Transmisión y Medición de Señales con el USRP 2920
+
+En la primera parte de esta actividad, se indicó que reconociéramos el bloque de frecuencia de muestreo y observáramos el impacto de alterar o cambiar su valor, que en un principio se establecía en 32 kHz, pero luego fue disminuido a 10 kHz para observar las variaciones en su señal.
+Se observó que, al reducir la frecuencia de muestreo, disminuyó el ancho de banda que se podía analizar, pasando de 16 kHz a 5 kHz. Esto nos restringía el efecto de las frecuencias que se podían percibir, pero al mismo tiempo mejoró la resolución de la frecuencia en este espectro.
+
+<img src="" title="señal Modificada En Amplitud" alt="Texto alternativo" width="600" height="400"/>
+</div>
+
+
+
 
 ### Referencias
 
