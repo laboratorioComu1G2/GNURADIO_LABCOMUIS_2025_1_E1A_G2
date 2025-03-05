@@ -77,7 +77,7 @@ Al realizar el aumento en la amplitud se puede ver como la señal cosenoidal aum
 En la primera parte de esta actividad, se indicó que reconociéramos el bloque de frecuencia de muestreo y observáramos el impacto de alterar o cambiar su valor, que en un principio se establecía en 32 kHz, pero luego fue disminuido a 10 kHz para observar las variaciones en su señal.
 
 Se observó que, al reducir la frecuencia de muestreo, disminuyó el ancho de banda que se podía analizar, pasando de 16 kHz a 5 kHz. Esto nos restringía el efecto de las frecuencias que se podían percibir, pero al mismo tiempo mejoró la resolución de la frecuencia en este espectro.
-
+<div align="center">
 <img src="https://github.com/user-attachments/assets/855697d7-c3c3-4125-ac9e-e9581dc5fefd" title="señal Modificada En Amplitud" alt="Texto alternativo" width="600" height="400"/>
 </div>
 
@@ -85,24 +85,24 @@ Tras realizar los primeros ajustes, se configuró la frecuencia de muestreo en 1
 
 Al incrementar la frecuencia de muestreo, se amplió el ancho de banda disponible, lo que permitió una mejor visualización de los componentes espectrales. En la gráfica del dominio del tiempo, la señal mostró una mayor definición y una representación más precisa de sus componentes real e imaginario. En el dominio de la frecuencia, se observó un pico bien definido en la frecuencia central, lo que confirmó una correcta transmisión y recepción de la señal. Por otro lado, los ajustes en la ganancia del USRP afectaron directamente la amplitud de la señal recibida, incrementándola conforme aumentaba la ganancia.
 
-
+<div align="center">
 <img src="https://github.com/user-attachments/assets/402e80a1-33f1-4a62-bf17-db41175d3c42" title="señal Modificada En Amplitud" alt="Texto alternativo" width="600" height="400"/>
 </div>
 
    ### 2. Medición con el Analizador de Espectros:
 
 Se midió el piso de ruido normalizado a la frecuencia de la portadora(basandonos en la señal que nos mostraba el analizador de espectros), obteniendo un valor de -82 dBm. Esto indica que el sistema presenta un nivel de ruido bajo, lo que permite una recepción más clara de la señal transmitida. Además, la diferencia entre el piso de ruido y la señal útil determina la relación señal-ruido (SNR), la cual influye directamente en la calidad de la transmisión y recepción de datos.
-
+<div align="center">
 <img src="https://github.com/user-attachments/assets/7a8230b0-6efb-4197-9d31-ce66047d17cc" title="señal Modificada En Amplitud" alt="Texto alternativo" width="600" height="400"/>
 </div>
 
 Al comparar los resultados obtenidos en el simulador con los del analizador de espectros, observamos que el nivel de ruido normalizado fue el mismo en ambos casos, pero en la simulación no apareció la señal central. Analizando esta diferencia, identificamos que se debe a la forma en que el analizador de espectros procesa y muestra las señales. El equipo introduce un efecto de auto-detección o supresión de la componente en continua (DC offset), lo que explica la ausencia de la señal en el centro de la gráfica simulada.
 
 Continuando con la práctica, se evaluó el impacto de modificar el tipo de dato de la fuente, comparando el uso de datos complejos con datos flotantes. Al emplear datos complejos, en el dominio de la frecuencia se observa tanto la magnitud como la fase, lo que nos permite obtener una representación más completa de la señal. Esto se refleja en la presencia de picos simétricos y en la detección precisa de cambios en la fase, lo que facilita un análisis detallado del comportamiento real de la señal.
-
+<div align="center">
 <img src="https://github.com/user-attachments/assets/c5906e88-ca9d-405b-8d7e-6e0a83833bd1" title="señal Modificada En Amplitud" alt="Texto alternativo" width="600" height="400"/>
 </div>
-
+<div align="center">
 <img src="https://github.com/user-attachments/assets/3356e3e8-9024-4551-b5eb-4deecbe4c0d2" title="señal Modificada En Amplitud" alt="Texto alternativo" width="600" height="400"/>
 </div>
 
@@ -112,22 +112,22 @@ En cambio, al utilizar datos reales, solo se muestra la magnitud, limitando la c
 Al modificar el tipo de onda de senoidal a cuadrado, se observan variaciones importantes tanto en la simulación como en el analizador de espectros.  La onda cuadrada muestra armónicos más destacados en el dominio de la frecuencia, manifestándose en múltiples picos a lo largo del espectro, en vez de un único pico predominante.  Además, la magnitud de estos armónicos se determina por la altura y el diseño de los pulsos, lo que aclara la repartición de energía en frecuencias más elevadas.
 
  Comparado con la onda senoidal, la onda cuadrada incorpora más elementos de alta frecuencia, a causa de sus transiciones bruscas.  Esto se puede observar en el analizador de espectros como varios picos en torno a la frecuencia central.
-
+<div align="center">
 <img src="https://github.com/user-attachments/assets/af025787-ccbc-4ef5-81dd-d3fefdf267d9" title="señal Modificada En Amplitud" alt="Texto alternativo" width="600" height="400"/>
 </div>
 
 Cuando se altera la frecuencia, el pico central en el espectro se traslada hacia la nueva portadora, lo que refleja la variación en la ubicación central.  En cambio, modificar la fase modifica la alineación de la onda en el dominio temporal, a pesar de que su impacto en la repartición de energía en el espectro es casi inaudible.  Estos hallazgos corroboran que la frecuencia establece el lugar del pico en el dominio de la frecuencia, en tanto que la fase afecta la sincronización temporal de la señal.
-
+<div align="center">
 <img src="https://github.com/user-attachments/assets/185dc1a2-b840-49e6-9453-bb018c820c0d" title="señal Modificada En Amplitud" alt="Texto alternativo" width="600" height="400"/>
 </div>
 
 Al modificar la amplitud de la señal generada, la potencia en el espectro aumenta o disminuye proporcionalmente. Los valores de amplitud más altos elevan el pico en el dominio de la frecuencia, reflejando niveles de potencia más altos, pero no cambian su posición. Por el contrario, al reducir la amplitud, se reduce la amplitud de toda la señal y sus armónicos, manteniendo así la misma posición del pico de frecuencia. Este comportamiento confirma que la amplitud afecta directamente la intensidad de la señal pero no cambia su frecuencia central ni la distribución de sus componentes.
-
+</div>
 
 ### ¿Qué diferencias se observan en las mediciones de potencia cuando se varía la ganancia del USRP?
 
 En la práctica se observó que al variar la ganancia del USRP, la potencia de la señal transmitida cambia de forma directa: un aumento en la ganancia eleva la potencia, reflejándose en un pico más pronunciado en el analizador de espectros, mientras que una ganancia menor reduce la potencia y, por ende, la altura del pico. Esto confirma la influencia directa de la ganancia sobre la intensidad de la señal, resaltando la importancia de ajustar correctamente este parámetro para lograr niveles de potencia adecuados
-
+</div>
 
 
 
@@ -140,12 +140,14 @@ El análisis de la relación señal-ruido (SNR) revela la importancia de mantene
 
 ### ¿Qué limitaciones tienen los equipos utilizados en términos de ancho de banda y precisión en las mediciones?
 
+
 El equipo utilizado tiene limitaciones inherentes en cuanto a ancho de banda y precisión de medición. Por ejemplo, el USRP 2920 está limitado por su rango operativo y resolución de medición, lo que puede dificultar la captura de señales de alta frecuencia o señales con transiciones muy rápidas. En el caso de un osciloscopio, depende de su frecuencia de muestreo y ancho de banda máximo, lo que puede limitar la fidelidad de la representación de señales complejas. Además, los analizadores de espectro, aunque permiten ajustar el ancho de banda de resolución, todavía introducen efectos como la supresión continua de componentes (desplazamiento de CC) y se ven afectados por el ruido de fondo, lo que afecta la precisión de las mediciones del nivel de potencia. Estas limitaciones enfatizan la importancia de comprender las características y limitaciones de cada instrumento para interpretar correctamente los resultados experimentales.
 
 
 ### ¿Qué aplicaciones prácticas tienen las mediciones de potencia y ancho de banda en sistemas de comunicaciones reales?
 
 Las mediciones de potencia y ancho de banda son cruciales en los sistemas de comunicación reales, ya que optimizan la calidad de la transmisión y el uso del espectro. Por un lado, medir la potencia ayuda a garantizar que la señal transmitida esté en el nivel adecuado para superar las pérdidas y el ruido ambiental, lo cual es fundamental para mantener una buena relación señal-ruido (SNR) y comunicaciones confiables. Por otro lado, medir el ancho de banda es fundamental para evaluar la capacidad del canal para transmitir información, de modo que se puedan diseñar filtros y estrategias de modulación para maximizar la eficiencia espectral y minimizar la interferencia con otros sistemas. En aplicaciones como redes móviles, televisión digital o comunicaciones Wi-Fi, estos parámetros son cruciales para cumplir con la normativa, asegurar la calidad del servicio y optimizar el rendimiento general del sistema de comunicación.
+</div>
 
 ### Referencias
 
