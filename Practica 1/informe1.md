@@ -20,9 +20,7 @@ Los autores de este informe certifican que el contenido aquí presentado es orig
 
 Asimismo, los autores asumen plena responsabilidad por la información contenida en este documento. 
 
-Uso de IA:
-
----
+Uso de IA: 
 ## Contenido
 
 ### Resumen
@@ -111,68 +109,44 @@ Continuando con la práctica, se evaluó el impacto de modificar el tipo de dato
 En cambio, al utilizar datos reales, solo se muestra la magnitud, limitando la cantidad de información visible en el espectro. Como resultado, la interpretación del espectro resulta menos detallada. Estos hallazgos nos confirman que, para un análisis más profundo en el dominio de la frecuencia, es mejor trabajar con datos complejos.
 
 
+Al modificar el tipo de onda de senoidal a cuadrado, se observan variaciones importantes tanto en la simulación como en el analizador de espectros.  La onda cuadrada muestra armónicos más destacados en el dominio de la frecuencia, manifestándose en múltiples picos a lo largo del espectro, en vez de un único pico predominante.  Además, la magnitud de estos armónicos se determina por la altura y el diseño de los pulsos, lo que aclara la repartición de energía en frecuencias más elevadas.
+
+ Comparado con la onda senoidal, la onda cuadrada incorpora más elementos de alta frecuencia, a causa de sus transiciones bruscas.  Esto se puede observar en el analizador de espectros como varios picos en torno a la frecuencia central.
+
+<img src="https://github.com/user-attachments/assets/af025787-ccbc-4ef5-81dd-d3fefdf267d9" title="señal Modificada En Amplitud" alt="Texto alternativo" width="600" height="400"/>
+</div>
+
+Cuando se altera la frecuencia, el pico central en el espectro se traslada hacia la nueva portadora, lo que refleja la variación en la ubicación central.  En cambio, modificar la fase modifica la alineación de la onda en el dominio temporal, a pesar de que su impacto en la repartición de energía en el espectro es casi inaudible.  Estos hallazgos corroboran que la frecuencia establece el lugar del pico en el dominio de la frecuencia, en tanto que la fase afecta la sincronización temporal de la señal.
+
+<img src="https://github.com/user-attachments/assets/185dc1a2-b840-49e6-9453-bb018c820c0d" title="señal Modificada En Amplitud" alt="Texto alternativo" width="600" height="400"/>
+</div>
+
+Al modificar la amplitud de la señal generada, la potencia en el espectro aumenta o disminuye proporcionalmente. Los valores de amplitud más altos elevan el pico en el dominio de la frecuencia, reflejando niveles de potencia más altos, pero no cambian su posición. Por el contrario, al reducir la amplitud, se reduce la amplitud de toda la señal y sus armónicos, manteniendo así la misma posición del pico de frecuencia. Este comportamiento confirma que la amplitud afecta directamente la intensidad de la señal pero no cambia su frecuencia central ni la distribución de sus componentes.
+
+
+### ¿Qué diferencias se observan en las mediciones de potencia cuando se varía la ganancia del USRP?
+
+En la práctica se observó que al variar la ganancia del USRP, la potencia de la señal transmitida cambia de forma directa: un aumento en la ganancia eleva la potencia, reflejándose en un pico más pronunciado en el analizador de espectros, mientras que una ganancia menor reduce la potencia y, por ende, la altura del pico. Esto confirma la influencia directa de la ganancia sobre la intensidad de la señal, resaltando la importancia de ajustar correctamente este parámetro para lograr niveles de potencia adecuados
+
+
+
+
+### Actividad 4: Análisis de Resultados y Conclusiones
+
+Durante la práctica se realizaron diversas mediciones mediante simulaciones en GNU Radio y transmisiones reales de USRP 2920, un osciloscopio R&S RTB2004 y un analizador de espectro R&S FPC1000. En las simulaciones se observó una representación precisa de la señal en los dominios de tiempo y frecuencia, permitiendo identificar claramente picos, armónicos y cambios de fase. Sin embargo, en las mediciones reales se encontraron algunas diferencias debido a las características del propio equipo, como el efecto de detección automática del analizador de espectro y la supresión de componentes DC.
+
+La comparación entre los resultados de la simulación y los obtenidos en el laboratorio muestra que el osciloscopio proporciona una vista detallada de la forma de onda en el dominio del tiempo, mientras que el analizador de espectro proporciona información valiosa sobre la distribución de energía y la presencia de armónicos en el dominio de la frecuencia. Además, encontramos que los cambios en parámetros como el tipo de datos, la forma de onda, la frecuencia, la fase y la amplitud tienen un impacto directo en la representación del espectro, validando la importancia de ajustar estos parámetros para lograr mediciones precisas.
+El análisis de la relación señal-ruido (SNR) revela la importancia de mantener un nivel de ruido bajo. En nuestra práctica, el ruido de fondo normalizado medido fue de -82 dBm, lo que indica un ambiente relativamente limpio. Sin embargo, es importante destacar que si la potencia de la señal está demasiado cerca de este valor, su correcta detección puede resultar difícil.
+
+### ¿Qué limitaciones tienen los equipos utilizados en términos de ancho de banda y precisión en las mediciones?
+
+El equipo utilizado tiene limitaciones inherentes en cuanto a ancho de banda y precisión de medición. Por ejemplo, el USRP 2920 está limitado por su rango operativo y resolución de medición, lo que puede dificultar la captura de señales de alta frecuencia o señales con transiciones muy rápidas. En el caso de un osciloscopio, depende de su frecuencia de muestreo y ancho de banda máximo, lo que puede limitar la fidelidad de la representación de señales complejas. Además, los analizadores de espectro, aunque permiten ajustar el ancho de banda de resolución, todavía introducen efectos como la supresión continua de componentes (desplazamiento de CC) y se ven afectados por el ruido de fondo, lo que afecta la precisión de las mediciones del nivel de potencia. Estas limitaciones enfatizan la importancia de comprender las características y limitaciones de cada instrumento para interpretar correctamente los resultados experimentales.
+
+
+### ¿Qué aplicaciones prácticas tienen las mediciones de potencia y ancho de banda en sistemas de comunicaciones reales?
+
+Las mediciones de potencia y ancho de banda son cruciales en los sistemas de comunicación reales, ya que optimizan la calidad de la transmisión y el uso del espectro. Por un lado, medir la potencia ayuda a garantizar que la señal transmitida esté en el nivel adecuado para superar las pérdidas y el ruido ambiental, lo cual es fundamental para mantener una buena relación señal-ruido (SNR) y comunicaciones confiables. Por otro lado, medir el ancho de banda es fundamental para evaluar la capacidad del canal para transmitir información, de modo que se puedan diseñar filtros y estrategias de modulación para maximizar la eficiencia espectral y minimizar la interferencia con otros sistemas. En aplicaciones como redes móviles, televisión digital o comunicaciones Wi-Fi, estos parámetros son cruciales para cumplir con la normativa, asegurar la calidad del servicio y optimizar el rendimiento general del sistema de comunicación.
+
 ### Referencias
 
-Ejemplo de referencia:
-
-- [Proakis, 2014] J. Proakis, M. Salehi. Fundamentals of communication systems. 2 ed. England: Pearson Education Limited, 2014. p. 164-165, 346. Chapter 5 In: [Biblioteca UIS](https://uis.primo.exlibrisgroup.com/permalink/57UIDS_INST/63p0of/cdi_askewsholts_vlebooks_9781292015699)
-
----
-# Ejemplos usando Markdown
-
-Volver al [INICIO](#laboratorio-de-comunicaciones)
-
-## Inclusión de Imágenes
-### Imagen de referencia dentro del repositorio:
-![Networking](my%20file/test.png)
-
-### Imagen de fuente externa
-![GNU Radio logo](https://kb.ettus.com/images/thumb/5/50/gnuradio.png/600px-gnuradio.png)
-
-### Uso de html para cambiar escala de la imagen
-<img src="https://kb.ettus.com/images/thumb/5/50/gnuradio.png/600px-gnuradio.png" alt="GNU Radio Logo" width="300">
-
-## Creación de hipevínculos 
-- [Aprende Markdown](https://markdown.es/)
-- [Más acerca de Markdown](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
-- [Abrir documento en el repositorio](my%20file/test_file.txt). Si hay espacios en la ruta de su archivo, reemplácelos por `%20`.
-- Ir a una sección de este documento. Por ejemplo: [Ir a Contenido](#contenido) Tenga en cuenta escribir el título de la sección en minúsculas y los espacios reemplazarlos por guiones.
-## Uso de Expresiones Matemáticas
-Se pueden incluir ecuaciones en el archivo `README.md` utilizando sintaxis similar a [LaTeX](https://manualdelatex.com/tutoriales/ecuaciones):
-
-### Ecuaciones en Línea
-```
-La energía de una señal exponencial es $E = \int_0^\infty A^2 e^{-2t/\tau} dt$.
-```
-**Salida renderizada:**
-La energía de una señal exponencial es $E = \int_0^\infty A^2 e^{-2t/\tau} dt$.
-
-### Ecuaciones en Bloque
-```
-$$E = \int_0^\infty A^2 e^{-2t/\tau} dt = \frac{A^2 \tau}{2}$$
-```
-**Salida renderizada**
-$$E = \int_0^\infty A^2 e^{-2t/\tau} dt = \frac{A^2 \tau}{2}$$
-
-## Creación de Tablas
-
-**Tabla 1.** Ejemplo de tabla en Markdown.
-
-| Parámetro | Valor |
-|-----------|-------|
-| Frecuencia (Hz) | 1000 |
-| Amplitud (V) | 5 |
-| Ciclo útil (%) | 50 |
-
-## Inclusión de código
-
-```python
-def hello_world():
-    print("Hello, World!")
-```
-
-También es posible resaltar texto tipo código como `print("Hello, World!")`.
-
----
-
-Volver al [INICIO](#laboratorio-de-comunicaciones)
+- https://ieeexplore.ieee.org
