@@ -88,27 +88,36 @@ Se le añadió un voltaje de ruido a la señal para ver su variación tanto en t
 Se le añadió una componente de offset de frecuencia a la señal de 0,5 Hz, al observar sus cambio se hace evidente como la señal en el tiempo deja de poseer la forma de una onda cosenoidal pura y sus componentes tanto real como imaginaria varian en cuanto a la amplitud original, respecto al espectro de la frecuencia se puede observar como cambia de posición la ganancia de potencia máxima, siendo desfasada alrededor de 10 kHz.
 
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/0f599f20-e86b-46a1-aca5-c93f1b0ce49" title="Señal Con Offset De Frecuencia" alt="Texto alternativo" width="600" height="400"/>
+  <img src="https://github.com/user-attachments/assets/ae48bcbe-cc59-4535-84d0-4b490aaed875" title="Señal Con Offset De Frecuencia" alt="Texto alternativo" width="600" height="400"/>
+</div>
 
 ### Señal Con Todos Los Cambios
 A continuación se puede observar una imagen con todos los cambios realizados a la señal a lo largo de la práctica, ésta señal presenta todas las alteraciones mencionadas en secciones anteriores del informe.
 
 <div align="center">
   <img src="https://github.com/user-attachments/assets/caeef924-92ac-43ab-83f7-a297721f56ad" title="Señal Con Todos Los Cambios" alt="Texto alternativo" width="600" height="400"/>
-
+</div>
 
 ### Señal Cuadrada 
 Luego de realizar el análisis de la señal coseno, se busco otro tipo de señal para verificar si su respuesta ante los cambios realizados a la señal coseno mantenian la misma tendencia, como se puede apreciar al realizar la comparación entre la señal original y aquella que posee todos los cambios, la tendencia de los cambios se mantien, tanto en la señal en el tiempo como para la señal en la frecuencia.
 
 ### Señal Original
+
 <div align="center">
   <img src="https://github.com/user-attachments/assets/c805be8a-cf7c-43be-ad02-3ed04f40b64c" title="Señal Cuadrada" alt="Texto alternativo" width="600" height="400"/>
+</div>
 
 ### Señal Con Todos Los Cambios
+
 <div align="center">
   <img src="https://github.com/user-attachments/assets/dc604f6b-c9f3-4720-8fe1-6e72a759aecb" title="Señal Con Offset De Frecuencia" alt="Texto alternativo" width="600" height="400"/>
+</div>
 
+### ¿Cómo se puede explicar matemáticamente la diferencia entre una fuente de tipo flotante y una de tipo complejo?
+Una fuente de tipo flotante se conoce también como una fuente de magnitud real, por lo que dicha fuente solo me generará valores reales, mientras que la fuente de tipo compleja me generará dos valores de magnitud, uno real y otro complejo, matematicamente se puede ver de la sigueinte manera: para una fuente flotante $x(t) = a(t)$ en donde $a(t)$ son valores unicamente reales, mientras que para una fuente compleja $x(t)=a(t)+jb(t)$
 
+### ¿Qué sucede con la señal en el dominio del tiempo y la frecuencia si se modifican los diferentes parámetros de la fuente?
+Al realizar distintos cambios en los parámetros de la fuente se pudieron observar las siguientes variaciones en el tiempo y la frecuencia, para el cambio en su amplitud se observa como la potencia en el espectro de la frecuencia aumenta su valor de manera considerable, al cambiar la frecuencia de la fuente hace que el espectro en la frecuencia se desplace hacia la frecuencia que se le está modificando, por último al modificar el ruido que le ingresa a la señal se puede observar como en el tiempo la señal se distorciona perdiendo su forma original y por lo tanto información, mientras que para el espectro de la frecuencia se observa como obtiene un piso de ruido mucho mayor por lo que resulta más complejo determinar el valor exacto de la ganancia de la potencia.
 ### Actividad 3: Transmisión y Medición de Señales con el USRP 2920
    ### 1. Configurar el USRP 2920:
 En la primera parte de esta actividad, se indicó que reconociéramos el bloque de frecuencia de muestreo y observáramos el impacto de alterar o cambiar su valor, que en un principio se establecía en 32 kHz, pero luego fue disminuido a 10 kHz para observar las variaciones en su señal.
