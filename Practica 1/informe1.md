@@ -63,13 +63,33 @@ En un inicio se tiene una señal coseno con amplitud de 1V y una frecuencia de 1
   <img src="https://github.com/user-attachments/assets/8a1ef106-7307-4d43-96f4-98cbdbd73400" title="señal original" alt="Texto alternativo" width="600" height="400"/>
 </div>
 
-### Señal Con Amplitud De 4V:
-Al realizar el aumento en la amplitud se puede ver como la señal cosenoidal aumenta tanto en su parte real como en su componente imaginaria, además la ganancia de potencia en el espectro de la frecuencia aumenta de manera considerable.
+### Señal Con Cambio En Su Amplitud:
+Al realizar el aumento en la amplitud de 1V a 4V se puede ver como la señal cosenoidal aumenta tanto en su parte real como en su componente imaginaria, además la ganancia de potencia en el espectro de la frecuencia aumenta de manera considerable.
 <div align="center">
   <img src="https://github.com/user-attachments/assets/dd62690e-d5bc-4325-92d2-31e8384a0041" title="señal Modificada En Amplitud" alt="Texto alternativo" width="600" height="400"/>
 </div>
 
+### Señal Con Cambio En Su Frecuencia:
+Al realizar un aumento en la frecuencia de la señal de 1kHz a 4kHz, se observa como la longitud de onda de la señal en el tiempo se disminuye y como en el espectro de la frecuencia su valor para la ganancia máxima de potencia se da en el valor de la nueva frecuencia, es decir, la ganancia máxima de potencia se logra en 4kHz.
 
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/33d52e19-4417-4183-8425-1e4978224e8a" title="señal Modificada En Frecuencia" alt="Texto alternativo" width="600" height="400"/>
+</div>
+
+
+### Señal Con Adición De Voltaje De Ruido
+Se le añadió un voltaje de ruido a la señal para ver su variación tanto en tiempo como en el espectro de frecuencia, se observa como en el tiempo resulta complicado determinar los valores que puede llegar a tomar la señal, adicionalmente la señal tiende a variar su amplitud superando sus limites tanto inferior como superior; en el espectro de la frecuencia se observa como el piso de ruido de la señal aumenta en gran medida su valor pasando de unos niveles de  casi -200 db a un nivel de -50 db
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/fe353172-70cd-4c10-a5b9-3968c6eeba45" title="señal Modificada En Ruido" alt="Texto alternativo" width="600" height="400"/>
+</div>
+
+### Señal Con Offset De Frecuencia
+Se le añadió una componente de offset de frecuencia a la señal de 0,5 Hz, al observar sus cambio se hace evidente como la señal en el tiempo deja de poseer la forma de una onda cosenoidal pura y sus componentes tanto real como imaginaria varian en cuanto a la amplitud original
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/0f599f20-e86b-46a1-aca5-c93f1b0ce497" title="señal Modificada En Ruido" alt="Texto alternativo" width="600" height="400"/>
+</div>
 
 #################################################################
 ### Actividad 3: Transmisión y Medición de Señales con el USRP 2920
