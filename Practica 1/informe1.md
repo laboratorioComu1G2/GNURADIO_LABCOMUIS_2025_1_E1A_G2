@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/f9e12d73-26e6-446d-8ee6-44e5ffe9d74f)# Laboratorio de Comunicaciones
+Laboratorio de Comunicaciones
 ## Universidad Industrial de Santander
 
 # Práctica 1C. Mediciones de potencia y frecuencia
