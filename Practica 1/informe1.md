@@ -20,7 +20,7 @@ Los autores de este informe certifican que el contenido aquí presentado es orig
 
 Asimismo, los autores asumen plena responsabilidad por la información contenida en este documento. 
 
-Uso de IA: 
+Uso de IA: En la elaboración del resumen y como fuente de investigación para insertar imagenes.
 ## Contenido
 
 ### Resumen
@@ -57,7 +57,7 @@ En los sistemas de comunicación de la actualidad se hace necesario un correcto 
 En esta fase de la práctica se analizó el comportamiento de los dispositivos y las diferentes configuraciones que poseian, se logró determinar que para el USRP 2920 su rango de frecuencias va desde 50 Mhz hasta 2.2 Ghz mientras que para el analizador de espectros va desde 5 kHz a 1 GHz, por lo que podemos decir que el analizador de espectros nos permite trabajar con frecuencias mucho menores a las que el USRP 2920 nos permite hacerlo, por otro lado se analizó como medir la amplitud y frecuencia en el osciloscopio, esto se logra mediante los siguientes pasos, primero se ingresa la señal que se quiere analizar, luego se ajusta la división de la señal para que ésta se muestre según lo que se quiera analizar, evitando así visualizar posibles saturaciones, luego se establece en el osciloscopio los valores que se quieren medir en este caso la amplitud y frecuencia para finalmente tomar los datos requeridos.
 ### Actividad 2: Simulación de Señales en GNU Radio
 En esta fase se visualizaron los cambios ocurridos a una señal de entrada elegida por cada grupo al alterar varios de sus parametros de manera individual, a continuación se muestra cada uno de los cambios con respecto a la imagen original y se hace una breve explicacioón de cada fenomeno ocurrido.
-### Señal Original: 
+### Señal Cosenoidal Original: 
 En un inicio se tiene una señal coseno con amplitud de 1V y una frecuencia de 1kHz dicha señal se representa con la sigueinte ecuación $cos((2\pi )1000t)$
 <div align="center">
   <img src="https://github.com/user-attachments/assets/8a1ef106-7307-4d43-96f4-98cbdbd73400" title="señal original" alt="Texto alternativo" width="600" height="400"/>
@@ -66,14 +66,14 @@ En un inicio se tiene una señal coseno con amplitud de 1V y una frecuencia de 1
 ### Señal Con Cambio En Su Amplitud:
 Al realizar el aumento en la amplitud de 1V a 4V se puede ver como la señal cosenoidal aumenta tanto en su parte real como en su componente imaginaria, además la ganancia de potencia en el espectro de la frecuencia aumenta de manera considerable.
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/dd62690e-d5bc-4325-92d2-31e8384a0041" title="señal Modificada En Amplitud" alt="Texto alternativo" width="600" height="400"/>
+  <img src="https://github.com/user-attachments/assets/dd62690e-d5bc-4325-92d2-31e8384a0041" title="Señal Modificada En Amplitud" alt="Texto alternativo" width="600" height="400"/>
 </div>
 
 ### Señal Con Cambio En Su Frecuencia:
 Al realizar un aumento en la frecuencia de la señal de 1kHz a 4kHz, se observa como la longitud de onda de la señal en el tiempo se disminuye y como en el espectro de la frecuencia su valor para la ganancia máxima de potencia se da en el valor de la nueva frecuencia, es decir, la ganancia máxima de potencia se logra en 4kHz.
 
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/33d52e19-4417-4183-8425-1e4978224e8a" title="señal Modificada En Frecuencia" alt="Texto alternativo" width="600" height="400"/>
+  <img src="https://github.com/user-attachments/assets/33d52e19-4417-4183-8425-1e4978224e8a" title="Señal Modificada En Frecuencia" alt="Texto alternativo" width="600" height="400"/>
 </div>
 
 
@@ -81,17 +81,34 @@ Al realizar un aumento en la frecuencia de la señal de 1kHz a 4kHz, se observa 
 Se le añadió un voltaje de ruido a la señal para ver su variación tanto en tiempo como en el espectro de frecuencia, se observa como en el tiempo resulta complicado determinar los valores que puede llegar a tomar la señal, adicionalmente la señal tiende a variar su amplitud superando sus limites tanto inferior como superior; en el espectro de la frecuencia se observa como el piso de ruido de la señal aumenta en gran medida su valor pasando de unos niveles de  casi -200 db a un nivel de -50 db
 
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/fe353172-70cd-4c10-a5b9-3968c6eeba45" title="señal Modificada En Ruido" alt="Texto alternativo" width="600" height="400"/>
+  <img src="https://github.com/user-attachments/assets/fe353172-70cd-4c10-a5b9-3968c6eeba45" title="Señal Modificada En Ruido" alt="Texto alternativo" width="600" height="400"/>
 </div>
 
 ### Señal Con Offset De Frecuencia
-Se le añadió una componente de offset de frecuencia a la señal de 0,5 Hz, al observar sus cambio se hace evidente como la señal en el tiempo deja de poseer la forma de una onda cosenoidal pura y sus componentes tanto real como imaginaria varian en cuanto a la amplitud original
+Se le añadió una componente de offset de frecuencia a la señal de 0,5 Hz, al observar sus cambio se hace evidente como la señal en el tiempo deja de poseer la forma de una onda cosenoidal pura y sus componentes tanto real como imaginaria varian en cuanto a la amplitud original, respecto al espectro de la frecuencia se puede observar como cambia de posición la ganancia de potencia máxima, siendo desfasada alrededor de 10 kHz.
 
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/0f599f20-e86b-46a1-aca5-c93f1b0ce497" title="señal Modificada En Ruido" alt="Texto alternativo" width="600" height="400"/>
-</div>
+  <img src="https://github.com/user-attachments/assets/0f599f20-e86b-46a1-aca5-c93f1b0ce49" title="Señal Con Offset De Frecuencia" alt="Texto alternativo" width="600" height="400"/>
 
-#################################################################
+### Señal Con Todos Los Cambios
+A continuación se puede observar una imagen con todos los cambios realizados a la señal a lo largo de la práctica, ésta señal presenta todas las alteraciones mencionadas en secciones anteriores del informe.
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/caeef924-92ac-43ab-83f7-a297721f56ad" title="Señal Con Todos Los Cambios" alt="Texto alternativo" width="600" height="400"/>
+
+
+### Señal Cuadrada 
+Luego de realizar el análisis de la señal coseno, se busco otro tipo de señal para verificar si su respuesta ante los cambios realizados a la señal coseno mantenian la misma tendencia, como se puede apreciar al realizar la comparación entre la señal original y aquella que posee todos los cambios, la tendencia de los cambios se mantien, tanto en la señal en el tiempo como para la señal en la frecuencia.
+
+### Señal Original
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/c805be8a-cf7c-43be-ad02-3ed04f40b64c" title="Señal Cuadrada" alt="Texto alternativo" width="600" height="400"/>
+
+### Señal Con Todos Los Cambios
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/dc604f6b-c9f3-4720-8fe1-6e72a759aecb" title="Señal Con Offset De Frecuencia" alt="Texto alternativo" width="600" height="400"/>
+
+
 ### Actividad 3: Transmisión y Medición de Señales con el USRP 2920
    ### 1. Configurar el USRP 2920:
 En la primera parte de esta actividad, se indicó que reconociéramos el bloque de frecuencia de muestreo y observáramos el impacto de alterar o cambiar su valor, que en un principio se establecía en 32 kHz, pero luego fue disminuido a 10 kHz para observar las variaciones en su señal.
@@ -172,3 +189,6 @@ Las mediciones de potencia y ancho de banda son cruciales en los sistemas de com
 ### Referencias
 
 - https://ieeexplore.ieee.org
+- Spectrum_Analyzer_FPC_XXX_ANL-EN.pdf
+- USRP-2920 Specifications.pdf
+- Spectrum_Analyzer_FPC_XXX_ANL-EN.pdf
