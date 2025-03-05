@@ -24,9 +24,9 @@ Uso de IA: En la elaboración del resumen y como fuente de investigación para i
 ## Contenido
 
 ### Resumen
-Descripción en no más de 150 palabras del contenido de la práctica. Debe ser conciso y brindar una idea clara sobre el trabajo realizado y sus conclusiones.
+En esta práctica se estudiaron las características en el dominio del tiempo y la frecuencia al cambiar los parámetros de la fuente, adicionalmente se analizó como dichos cambios afectaban a distintas formas de onda, gracias a esto se pudo observar como las señales senoidales centran toda su energía en una sola frecuencia mientras que las señales cuadradas se distribuyen a lo largo de varias frecuencias. Por último se observó como los resultados obtenidos mediante la simulación fueron concordantes con los datos visto en el laboratorio, comprobando así la relación que existe entre los parámetros de la señal y sus comportamiento en tiempo y frecuencia.
 
-**Palabras clave:** Analizador de espectros, mediciones, GNU radio, Mediciones. 
+**Palabras clave:** Analizador de espectros, GNU radio, Mediciones, Transformaciones de la señal. 
 
 ### Introducción
 En los sistemas de comunicación de la actualidad se hace necesario un correcto análisis de las señales para garantizar que la información se transmita de manera adecuada, por lo cual es imprescindible comprender cómo afecta a la señal sus distintos parámetros tales como: las formas de onda, las fuentes de la señal y el entorno en el cual se está transmitiendo, además de considerar sus efectos en el tiempo y la frecuencia. A lo largo de este informe se tiene como objetivo analizar el comportamiento de una señal al implementarle ciertos cambios, entre estos la amplitud, la frecuencia, el ruido, la fase y su offset; todos estos cambios se podrán medir utilizando el USRP 2920 y equipos complementarios como el analizador de espectros y el osciloscopio.
