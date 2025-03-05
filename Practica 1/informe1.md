@@ -1,4 +1,4 @@
-# Laboratorio de Comunicaciones
+![image](https://github.com/user-attachments/assets/f9e12d73-26e6-446d-8ee6-44e5ffe9d74f)# Laboratorio de Comunicaciones
 ## Universidad Industrial de Santander
 
 # Práctica 1C. Mediciones de potencia y frecuencia
@@ -75,14 +75,40 @@ Al realizar el aumento en la amplitud se puede ver como la señal cosenoidal aum
 
 #################################################################
 ### Actividad 3: Transmisión y Medición de Señales con el USRP 2920
-
+   ### 1. Configurar el USRP 2920:
 En la primera parte de esta actividad, se indicó que reconociéramos el bloque de frecuencia de muestreo y observáramos el impacto de alterar o cambiar su valor, que en un principio se establecía en 32 kHz, pero luego fue disminuido a 10 kHz para observar las variaciones en su señal.
+
 Se observó que, al reducir la frecuencia de muestreo, disminuyó el ancho de banda que se podía analizar, pasando de 16 kHz a 5 kHz. Esto nos restringía el efecto de las frecuencias que se podían percibir, pero al mismo tiempo mejoró la resolución de la frecuencia en este espectro.
 
-<img src="" title="señal Modificada En Amplitud" alt="Texto alternativo" width="600" height="400"/>
+<img src="https://github.com/user-attachments/assets/855697d7-c3c3-4125-ac9e-e9581dc5fefd" title="señal Modificada En Amplitud" alt="Texto alternativo" width="600" height="400"/>
 </div>
 
+Tras realizar los primeros ajustes, se configuró la frecuencia de muestreo en 1 MHz para evaluar su efecto en la señal. Además, se analizaron las variaciones al modificar la frecuencia y la ganancia del USRP.
 
+Al incrementar la frecuencia de muestreo, se amplió el ancho de banda disponible, lo que permitió una mejor visualización de los componentes espectrales. En la gráfica del dominio del tiempo, la señal mostró una mayor definición y una representación más precisa de sus componentes real e imaginario. En el dominio de la frecuencia, se observó un pico bien definido en la frecuencia central, lo que confirmó una correcta transmisión y recepción de la señal. Por otro lado, los ajustes en la ganancia del USRP afectaron directamente la amplitud de la señal recibida, incrementándola conforme aumentaba la ganancia.
+
+
+<img src="https://github.com/user-attachments/assets/402e80a1-33f1-4a62-bf17-db41175d3c42" title="señal Modificada En Amplitud" alt="Texto alternativo" width="600" height="400"/>
+</div>
+
+   ### 2. Medición con el Analizador de Espectros:
+
+Se midió el piso de ruido normalizado a la frecuencia de la portadora(basandonos en la señal que nos mostraba el analizador de espectros), obteniendo un valor de -82 dBm. Esto indica que el sistema presenta un nivel de ruido bajo, lo que permite una recepción más clara de la señal transmitida. Además, la diferencia entre el piso de ruido y la señal útil determina la relación señal-ruido (SNR), la cual influye directamente en la calidad de la transmisión y recepción de datos.
+
+<img src="https://github.com/user-attachments/assets/7a8230b0-6efb-4197-9d31-ce66047d17cc" title="señal Modificada En Amplitud" alt="Texto alternativo" width="600" height="400"/>
+</div>
+
+Al comparar los resultados obtenidos en el simulador con los del analizador de espectros, observamos que el nivel de ruido normalizado fue el mismo en ambos casos, pero en la simulación no apareció la señal central. Analizando esta diferencia, identificamos que se debe a la forma en que el analizador de espectros procesa y muestra las señales. El equipo introduce un efecto de auto-detección o supresión de la componente en continua (DC offset), lo que explica la ausencia de la señal en el centro de la gráfica simulada.
+
+Continuando con la práctica, se evaluó el impacto de modificar el tipo de dato de la fuente, comparando el uso de datos complejos con datos flotantes. Al emplear datos complejos, en el dominio de la frecuencia se observa tanto la magnitud como la fase, lo que nos permite obtener una representación más completa de la señal. Esto se refleja en la presencia de picos simétricos y en la detección precisa de cambios en la fase, lo que facilita un análisis detallado del comportamiento real de la señal.
+
+<img src="https://github.com/user-attachments/assets/c5906e88-ca9d-405b-8d7e-6e0a83833bd1" title="señal Modificada En Amplitud" alt="Texto alternativo" width="600" height="400"/>
+</div>
+
+<img src="https://github.com/user-attachments/assets/3356e3e8-9024-4551-b5eb-4deecbe4c0d2" title="señal Modificada En Amplitud" alt="Texto alternativo" width="600" height="400"/>
+</div>
+
+En cambio, al utilizar datos reales, solo se muestra la magnitud, limitando la cantidad de información visible en el espectro. Como resultado, la interpretación del espectro resulta menos detallada. Estos hallazgos nos confirman que, para un análisis más profundo en el dominio de la frecuencia, es mejor trabajar con datos complejos.
 
 
 ### Referencias
