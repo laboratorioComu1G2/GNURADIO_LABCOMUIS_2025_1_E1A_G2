@@ -148,13 +148,16 @@ Se buscaron los valores de ancho de banda y ruido para los cuales la señal de a
 
 <div align="center">
   <img src="https://github.com/user-attachments/assets/6ce8a91d-9784-48f9-8502-e262f018f122" title="https://github.com/user-attachments/assets/a4914c27-8a38-4697-9267-621b9b16b2ef" alt="Texto alternativo" width="600" height="400"/>
-</div>}
+</div>
 
-### ¿Cómo se puede explicar matemáticamente la diferencia entre una fuente de tipo flotante y una de tipo complejo?
-Una fuente de tipo flotante se conoce también como una fuente de magnitud real, por lo que dicha fuente solo me generará valores reales, mientras que la fuente de tipo compleja me generará dos valores de magnitud, uno real y otro complejo, matematicamente se puede ver de la sigueinte manera: para una fuente flotante $x(t) = a(t)$ en donde $a(t)$ son valores unicamente reales, mientras que para una fuente compleja $x(t)=a(t)+jb(t)$
+### ¿Cuál es el efecto de filtrar las frecuencias altas de una señal?
+Eliminar las frecuencias altas reduce la cantidad de componentes de alta frecuencia en la señal, lo que suaviza la forma de onda y puede causar una pérdida de información, así como se observo para el caso de la señal triangular la cual a altas frecuencias presentaba una forma de onda senoidal.
 
-### ¿Qué sucede con la señal en el dominio del tiempo y la frecuencia si se modifican los diferentes parámetros de la fuente?
-Al realizar distintos cambios en los parámetros de la fuente se pudieron observar las siguientes variaciones en el tiempo y la frecuencia, para el cambio en su amplitud se observa como la potencia en el espectro de la frecuencia aumenta su valor de manera considerable, al cambiar la frecuencia de la fuente hace que el espectro en la frecuencia se desplace hacia la frecuencia que se le está modificando, por último al modificar el ruido que le ingresa a la señal se puede observar como en el tiempo la señal se distorciona perdiendo su forma original y por lo tanto información, mientras que para el espectro de la frecuencia se observa como obtiene un piso de ruido mucho mayor por lo que resulta más complejo determinar el valor exacto de la ganancia de la potencia.
+### ¿Qué ocurre al eliminar armónicos de una señal?
+La eliminación de armonicos puede llegar a afectar la señal si se eliminan los armonicos más grandes, ya que dichos armonicos son lo que poseen mayor cantudad de información de la señal original, pero dado el caso en que solo se eliminen componentes pequeñas no habría gran influencia, ya que la mayoría de armonicos pequeños tienden a representar ruido.
+
+### ¿Cómo se puede mejorar la relación señal a ruido en una señal?
+
 ### Actividad 3: Transmisión y Medición de Señales con el USRP 2920
    ### 1. Configurar el USRP 2920:
 En la primera parte de esta actividad, se indicó que reconociéramos el bloque de frecuencia de muestreo y observáramos el impacto de alterar o cambiar su valor, que en un principio se establecía en 32 kHz, pero luego fue disminuido a 10 kHz para observar las variaciones en su señal.
