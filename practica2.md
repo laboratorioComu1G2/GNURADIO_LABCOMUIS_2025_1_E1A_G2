@@ -20,16 +20,18 @@ Los autores de este informe certifican que el contenido aquí presentado es orig
 
 Asimismo, los autores asumen plena responsabilidad por la información contenida en este documento. 
 
-Uso de IA: .
+Uso de IA: Se usó una IA para generar ideas acerca de la construcción del resumen y la introducción.
 ## Contenido
 
 ### Resumen
-En esta práctica se estudiaron las características en el dominio del tiempo y la frecuencia al cambiar los parámetros de la fuente, adicionalmente se analizó como dichos cambios afectaban a distintas formas de onda, gracias a esto se pudo observar como las señales senoidales centran toda su energía en una sola frecuencia mientras que las señales cuadradas se distribuyen a lo largo de varias frecuencias. Por último se observó como los resultados obtenidos mediante la simulación fueron concordantes con los datos visto en el laboratorio, comprobando así la relación que existe entre los parámetros de la señal y sus comportamiento en tiempo y frecuencia.
+En esta práctica se analizó un modelo de canal para la transmisión de distintos tipos de señales, además de ver las afectaciones presentadas por la atenuación y el ruido, en un inicio se analizaron las señales mediante un flujograma, para posteriormente comparar los resultados obtenidos con el analizador de espectros, se estudiaron los efectos del ruido y la atenuación, todo esto bajo diferentes condiciones y para diferentes tipos de señales.
 
-**Palabras clave:** Analizador de espectros, GNU radio, Mediciones, Transformaciones de la señal. 
+**Palabras clave:** Espectro en Frecuencia, GNU radio, Filtros, Ruido. 
 
 ### Introducción
-En los sistemas de comunicación de la actualidad se hace necesario un correcto análisis de las señales para garantizar que la información se transmita de manera adecuada, por lo cual es imprescindible comprender cómo afecta a la señal sus distintos parámetros tales como: las formas de onda, las fuentes de la señal y el entorno en el cual se está transmitiendo, además de considerar sus efectos en el tiempo y la frecuencia. A lo largo de este informe se tiene como objetivo analizar el comportamiento de una señal al implementarle ciertos cambios, entre estos la amplitud, la frecuencia, el ruido, la fase y su offset; todos estos cambios se podrán medir utilizando el USRP 2920 y equipos complementarios como el analizador de espectros y el osciloscopio.
+En el mundo de las telecomunicaciones, cuando enviamos señales digitales por un canal, estas pueden verse afectadas por varias cosas, como el ruido, la atenuación y la dispersión. Estos factores pueden hacer que la señal llegue con errores o distorcionada, lo que afecta su calidad y la transmisión de la información.  
+
+El objetivo de esta práctica es crear un modelo de canal que nos ayude a estudiar cómo se comporta la señal en distintas condiciones de transmisión. A través de simulaciones y analisis de los resultados, queremos entender mejor cómo estos factores afectan la señal y ver qué soluciones podrían mejorar su calidad. Este tipo de estudios es clave para diseñar sistemas de comunicación más eficientes y resistentes a las interferencias.
 
 ### Procedimiento
 ### Actividad 1: Actividades de simulación de canal en GNU Radio
@@ -212,6 +214,3 @@ Las mediciones de potencia y ancho de banda son cruciales en los sistemas de com
 ### Referencias
 
 - https://ieeexplore.ieee.org
-- Spectrum_Analyzer_FPC_XXX_ANL-EN.pdf
-- USRP-2920 Specifications.pdf
-- Spectrum_Analyzer_FPC_XXX_ANL-EN.pdf
