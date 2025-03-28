@@ -11,7 +11,7 @@ Escuela de Ingenierías Eléctrica, Electrónica y de Telecomunicaciones
 Universidad Industrial de Santander
 
 ### Fecha
-5 de marzo de 2025
+28 de marzo de 2025
 
 ---
 
