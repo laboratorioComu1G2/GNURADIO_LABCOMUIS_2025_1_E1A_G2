@@ -43,7 +43,7 @@ Para poder iniciar con las simulaciones se requería de un valor n para determin
 En esta fase se visualizaron los cambios ocurridos a una señal de entrada elegida por cada grupo al alterar varios de sus parametros de manera individual, a continuación se muestra cada uno de los cambios con respecto a la imagen original y se hace una breve explicación de cada fenomeno ocurrido.
 
 ### Señal Triangular Original: 
-En un inicio se tiene una señal triangular con amplitud de 0.5V y una frecuencia de 1kHz dicha señal se representa con la sigueinte ecuación $cos((2\pi )1000t)$
+En un inicio se tiene una señal triangular con amplitud de 0.5V y una frecuencia de 1kHz.
 <div align="center">
   <img src="https://github.com/user-attachments/assets/ef8e665b-022f-4fc4-a90b-0424c00ffe91" title="señal original" alt="Texto alternativo" width="600" height="400"/>
 </div>
@@ -51,7 +51,7 @@ En un inicio se tiene una señal triangular con amplitud de 0.5V y una frecuenci
 ### Señal Con Cambio En Su Frecuencia De Corte Inferior:
 Al realizar el aumento en su frecuencia de corte inferior se pudo observar como la amplitud de la señal de salida se reducía.
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/4075fc4d-6b3a-436f-bf60-23833daa25d" title="Señal Modificada En Amplitud" alt="Texto alternativo" width="600" height="400"/>
+  <img src="https://github.com/user-attachments/assets/644ec085-c100-47d6-bd15-b38834f52956" title="Señal Modificada En Amplitud" alt="Texto alternativo" width="600" height="400"/>
 </div>
 
 ### Señal Con Una Reducción En La Diferencia De Sus Frecuencias De Corte:
@@ -63,23 +63,49 @@ Al reducir de manera considerable el ancho de banda del filtro se puede observar
 
 
 ### Señal Con Adición De Voltaje De Ruido Para El Dominio Del Tiempo
-Se le añadió un voltaje de ruido a la señal para ver su variación tanto en la entrada como en su salida luego de pasar através de un filtro, se pudo observar como en la entrada la señal presenta una dsitorción muy fuerte apesar de solo tener 0.1 V de ruido, esto se debe a que el valor de su ancho de banda es muy grande por lo que la señal captura mucho más ruido del que se podría esperar en un primer momento, al analizar la señal luego de pasar por el filtro se puede ver como ésta presenta una ligera atenuación, pero en su forma no presenta grandes camabios, esto se debe a que el filtro nos permite visualizar unicamente las componentes de la señal que queremos evitando que se muestre en la salida todo ese ruido no deseado.
+Se le añadió un voltaje de ruido a la señal para ver su variación tanto en la entrada como en su salida luego de pasar através de un filtro, se pudo observar como en la entrada la señal presenta una distorción muy fuerte apesar de solo tener 0.1 V de ruido, esto se debe a que el valor de su ancho de banda es muy grande por lo que la señal captura mucho más ruido del que se podría esperar en un primer momento, al analizar la señal luego de pasar por el filtro se puede ver como ésta presenta una ligera atenuación, pero en su forma no presenta grandes camabios, esto se debe a que el filtro nos permite visualizar unicamente las componentes de la señal que queremos evitando que se muestre en la salida todo ese ruido no deseado.
 
 <div align="center">
   <img src="https://github.com/user-attachments/assets/f61e2feb-43d7-49ba-ac12-bc0a5848a2ca" title="Señal Modificada En Ruido" alt="Texto alternativo" width="600" height="400"/>
 </div>
 
 ### Señal Triangular Original En El Dominio De La Frecuencia: 
+En esta parte se presenta el espectro de la frecuencia para la señal triangular original, tanto en su entrada como en su salida despues del filtro.
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/a6d52809-4fd4-435b-934b-a3db4ef9d360" title="señal original" alt="Texto alternativo" width="600" height="400"/>
+</div>
 
+### Señal Con Adición De Voltaje De Ruido Para El Dominio De La Frecuencia
+Luego de añardirle un ruido de valor 0.1V se apreció como para la señal de entrada el piso de ruido aumenta su valor hasta -60 db mientras que su salida se filtra el ruido y solo observan los valores cercanos a su potencia maxima, debido a que el filtro elimina todas las demás componentes.
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/1bf1869c-884e-4d78-bd68-35c0b5d9f31b" title="https://github.com/user-attachments/assets/a4914c27-8a38-4697-9267-621b9b16b2ef" alt="Texto alternativo" width="600" height="400"/>
+</div>
+
+### Señal Coseno Original: 
+En un inicio se tiene una señal triangular con amplitud de 0.5V y una frecuencia de 1kHz dicha señal se representa con la sigueinte ecuación $cos((2\pi )1000t)$
 <div align="center">
   <img src="https://github.com/user-attachments/assets/ef8e665b-022f-4fc4-a90b-0424c00ffe91" title="señal original" alt="Texto alternativo" width="600" height="400"/>
 </div>
 
-### Señal Con Adición De Voltaje De Ruido Para El Dominio De La Frecuencia
-Se le añadió una componente de offset de frecuencia a la señal de 0,5 Hz, al observar sus cambio se hace evidente como la señal en el tiempo deja de poseer la forma de una onda cosenoidal pura y sus componentes tanto real como imaginaria varian en cuanto a la amplitud original, respecto al espectro de la frecuencia se puede observar como cambia de posición la ganancia de potencia máxima, siendo desfasada alrededor de 10 kHz.
+### Señal Con Adición De Voltaje De Ruido Para El Dominio Del Tiempo
+Se le añadió un voltaje de ruido a la señal para ver su variación tanto en la entrada como en su salida luego de pasar através de un filtro, se pudo observar como para esta señal coseno se mantiene la misma tendencia de la señal triangular vista con anterioridad en la entrada la señal presenta una distorción muy fuerte apesar de solo tener 0.1 V de ruido, esto se debe a que el valor de su ancho de banda es muy grande por lo que la señal captura mucho más ruido del que se podría esperar en un primer momento, al analizar la señal luego de pasar por el filtro se puede ver como ésta presenta una ligera atenuación, pero en su forma no presenta grandes camabios, esto se debe a que el filtro nos permite visualizar unicamente las componentes de la señal que queremos evitando que se muestre en la salida todo ese ruido no deseado.
 
 <div align="center">
-  <img src="" title="Señal Con Offset De Frecuencia" alt="Texto alternativo" width="600" height="400"/>
+  <img src="https://github.com/user-attachments/assets/0a876bde-a271-4188-958c-6bb109865278" title="Señal Modificada En Ruido" alt="Texto alternativo" width="600" height="400"/>
+</div>
+
+### Señal Coseno Original En El Dominio De La Frecuencia: 
+En esta parte se presenta el espectro de la frecuencia para la señal triangular original, tanto en su entrada como en su salida despues del filtro.
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/a6d52809-4fd4-435b-934b-a3db4ef9d360" title="señal original" alt="Texto alternativo" width="600" height="400"/>
+</div>
+
+### Señal Con Adición De Voltaje De Ruido Para El Dominio De La Frecuencia
+Luego de añardirle un ruido de valor 0.1V se apreció como para la señal de entrada el piso de ruido aumenta su valor hasta -60 db mientras que su salida se filtra el ruido y solo observan los valores cercanos a su potencia maxima, debido a que el filtro elimina todas las demás componentes.
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/1bf1869c-884e-4d78-bd68-35c0b5d9f31b" title="https://github.com/user-attachments/assets/a4914c27-8a38-4697-9267-621b9b16b2ef" alt="Texto alternativo" width="600" height="400"/>
 </div>
 
 ### Señal Con Todos Los Cambios
