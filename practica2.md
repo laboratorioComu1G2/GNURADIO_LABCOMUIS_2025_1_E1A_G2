@@ -35,10 +35,13 @@ En los sistemas de comunicación de la actualidad se hace necesario un correcto 
 ### Actividad 1: Actividades de simulación de canal en GNU Radio
 ### Objetivo
 Familiarizarse con algunos fenómenos de canal en un ambiente simulado.
+
    ## 1. Seleccionar un valor n para determinar la frecuencia de muestreo:
 Para poder iniciar con las simulaciones se requería de un valor n para determinar la frecuencia de muestreo a la cual trabajaría el sistema, por lo que para nuestro caso se utilizó un n=6 el cual fue reemplazado en la siguiente ecuación: $\frac{25e^{6}}{2^{n}}$
+
 ### Actividad 2: Simulación de Señales en GNU Radio
 En esta fase se visualizaron los cambios ocurridos a una señal de entrada elegida por cada grupo al alterar varios de sus parametros de manera individual, a continuación se muestra cada uno de los cambios con respecto a la imagen original y se hace una breve explicación de cada fenomeno ocurrido.
+
 ### Señal Triangular Original: 
 En un inicio se tiene una señal triangular con amplitud de 0.5V y una frecuencia de 1kHz dicha señal se representa con la sigueinte ecuación $cos((2\pi )1000t)$
 <div align="center">
@@ -48,29 +51,35 @@ En un inicio se tiene una señal triangular con amplitud de 0.5V y una frecuenci
 ### Señal Con Cambio En Su Frecuencia De Corte Inferior:
 Al realizar el aumento en su frecuencia de corte inferior se pudo observar como la amplitud de la señal de salida se reducía.
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/4075fc4d-6b3a-436f-bf60-23833daa25db" title="Señal Modificada En Amplitud" alt="Texto alternativo" width="600" height="400"/>
+  <img src="https://github.com/user-attachments/assets/4075fc4d-6b3a-436f-bf60-23833daa25d" title="Señal Modificada En Amplitud" alt="Texto alternativo" width="600" height="400"/>
 </div>
 
 ### Señal Con Una Reducción En La Diferencia De Sus Frecuencias De Corte:
 Al reducir de manera considerable el ancho de banda del filtro se puede observar como la señal que en su entrada es un triangular tiende a una forma senoidal con una reducción de su amplitud.
 
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/33d52e19-4417-4183-8425-1e4978224e8a" title="Señal Modificada En Frecuencia" alt="Texto alternativo" width="600" height="400"/>
+  <img src="https://github.com/user-attachments/assets/0574fee2-f627-4bdc-b92e-e0614ecbee42" title="Señal Modificada En Frecuencia" alt="Texto alternativo" width="600" height="400"/>
 </div>
 
 
-### Señal Con Adición De Voltaje De Ruido
+### Señal Con Adición De Voltaje De Ruido Para El Dominio Del Tiempo
 Se le añadió un voltaje de ruido a la señal para ver su variación tanto en la entrada como en su salida luego de pasar através de un filtro, se pudo observar como en la entrada la señal presenta una dsitorción muy fuerte apesar de solo tener 0.1 V de ruido, esto se debe a que el valor de su ancho de banda es muy grande por lo que la señal captura mucho más ruido del que se podría esperar en un primer momento, al analizar la señal luego de pasar por el filtro se puede ver como ésta presenta una ligera atenuación, pero en su forma no presenta grandes camabios, esto se debe a que el filtro nos permite visualizar unicamente las componentes de la señal que queremos evitando que se muestre en la salida todo ese ruido no deseado.
 
 <div align="center">
   <img src="https://github.com/user-attachments/assets/f61e2feb-43d7-49ba-ac12-bc0a5848a2ca" title="Señal Modificada En Ruido" alt="Texto alternativo" width="600" height="400"/>
 </div>
 
-### Señal Con Offset De Frecuencia
+### Señal Triangular Original En El Dominio De La Frecuencia: 
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/ef8e665b-022f-4fc4-a90b-0424c00ffe91" title="señal original" alt="Texto alternativo" width="600" height="400"/>
+</div>
+
+### Señal Con Adición De Voltaje De Ruido Para El Dominio De La Frecuencia
 Se le añadió una componente de offset de frecuencia a la señal de 0,5 Hz, al observar sus cambio se hace evidente como la señal en el tiempo deja de poseer la forma de una onda cosenoidal pura y sus componentes tanto real como imaginaria varian en cuanto a la amplitud original, respecto al espectro de la frecuencia se puede observar como cambia de posición la ganancia de potencia máxima, siendo desfasada alrededor de 10 kHz.
 
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/ae48bcbe-cc59-4535-84d0-4b490aaed875" title="Señal Con Offset De Frecuencia" alt="Texto alternativo" width="600" height="400"/>
+  <img src="" title="Señal Con Offset De Frecuencia" alt="Texto alternativo" width="600" height="400"/>
 </div>
 
 ### Señal Con Todos Los Cambios
