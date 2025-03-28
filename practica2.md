@@ -162,7 +162,30 @@ Una de las formas de mejorar la relación señal a ruido es el uso de filtros ad
 Aumentar la potencia de la señal transmitida
 ### Actividad 3: Fenómenos de canal en el analizador de espectros
 
+### Objetivo
 
+Familiarizarse con los fenómenos de un canal alámbrico real en el dominio de la frecuencia.
+
+### Procedimiento
+
+1. **Configurar el USRP 2920:**
+En un inicio se configuró el flujograma dado por el docente para establecer un valor de frecuencia de muestreo adecuado para la práctica, dado que se requería ussar al siguiente fórmula: $\frac{25e^{6}}{2^{n}}$ donde n debe ser un número mayor a 2 y para nuestro caso se estableció que éste fuese de 6.
+2. **Configurar el Analizador de Espectros:**
+En esta parte se utilizó el analizador de espectros para ver el comportamiento de diferentes señales medidas mediante el mismo cable, cada uno de estos cambios se muestra a continuación:
+
+### Señal Triangular
+En un inicio se mostró una señal triangular en el analizardor de espectros medida mediante la conexión con un cable coaxial, éste se pueden ver sus componentes así como los armonicos no deseados generados por el ruido.
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/c174c78f-3948-4833-83f0-6841612649ec" title="https://github.com/user-attachments/assets/a4914c27-8a38-4697-9267-621b9b16b2ef" alt="Texto alternativo" width="600" height="400"/>
+</div>
+
+### Señal Coseno 
+Se mostró una señal cosenoidal en el analizardor de espectros medida mediante la conexión con un cable coaxial, éste se pueden ver sus componentes así como los armonicos no deseados generados por el ruido.
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/29c7e530-28fe-42fd-a3ed-c94ee0598dfc" title="https://github.com/user-attachments/assets/a4914c27-8a38-4697-9267-621b9b16b2ef" alt="Texto alternativo" width="600" height="400"/>
+</div>
 
 ### Actividad 4: Análisis de Resultados y Conclusiones
 
