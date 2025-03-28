@@ -157,7 +157,9 @@ Eliminar las frecuencias altas reduce la cantidad de componentes de alta frecuen
 La eliminación de armonicos puede llegar a afectar la señal si se eliminan los armonicos más grandes, ya que dichos armonicos son lo que poseen mayor cantudad de información de la señal original, pero dado el caso en que solo se eliminen componentes pequeñas no habría gran influencia, ya que la mayoría de armonicos pequeños tienden a representar ruido.
 
 ### ¿Cómo se puede mejorar la relación señal a ruido en una señal?
+Una de las formas de mejorar la relación señal a ruido es el uso de filtros adecuados para eliminar el ruido fuera del ancho de banda útil, esto quiere decir que solo se reducirá su ancho de banda para evitar el paso de señales de ruido indeseadas mientras que se mantiene la cantidad de información necesaria para transmitir el mensaje.
 
+Aumentar la potencia de la señal transmitida
 ### Actividad 3: Transmisión y Medición de Señales con el USRP 2920
    ### 1. Configurar el USRP 2920:
 En la primera parte de esta actividad, se indicó que reconociéramos el bloque de frecuencia de muestreo y observáramos el impacto de alterar o cambiar su valor, que en un principio se establecía en 32 kHz, pero luego fue disminuido a 10 kHz para observar las variaciones en su señal.
