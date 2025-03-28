@@ -187,6 +187,10 @@ Se mostró una señal cosenoidal en el analizardor de espectros medida mediante 
   <img src="https://github.com/user-attachments/assets/29c7e530-28fe-42fd-a3ed-c94ee0598dfc" title="https://github.com/user-attachments/assets/a4914c27-8a38-4697-9267-621b9b16b2ef" alt="Texto alternativo" width="600" height="400"/>
 </div>
 
+### ¿Cuál es el efecto del ruido sobre la respuesta en frecuencia de las señales medidas en el analizador de espectro? ¿Conservan las mismas relaciones que se evidencian en la simulación?
+De manera general se puede decir que efectivamente la respuesta en frecuencia de las señales medidas en el analizador de espectros conservan cierta relación con los datos obtenidos en la simulación, sin embargo, es importante notar que a diferencia de la simulación en donde se eliminaban todos los armonicos indeseados gracias al filtro, para el caso del analizador espectro aparecen, esto se debe a que la señal no se puede transmitir me manera adecuada al 100%, por lo que se generan componentes de ruido debido a la transmisión mediante el cable lo que afecta el resultado visto por el analizador de espectro.
+
+
 ### Actividad 4: Análisis de Resultados y Conclusiones
 
 Durante la práctica se realizaron diversas mediciones mediante simulaciones en GNU Radio y transmisiones reales de USRP 2920, un osciloscopio R&S RTB2004 y un analizador de espectro R&S FPC1000. En las simulaciones se observó una representación precisa de la señal en los dominios de tiempo y frecuencia, permitiendo identificar claramente picos, armónicos y cambios de fase. Sin embargo, en las mediciones reales se encontraron algunas diferencias debido a las características del propio equipo, como el efecto de detección automática del analizador de espectro y la supresión de componentes DC.
