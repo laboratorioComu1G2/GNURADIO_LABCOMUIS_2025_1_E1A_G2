@@ -85,7 +85,7 @@ Luego de añardirle un ruido de valor 0.1V se apreció como para la señal de en
 ### Señal Coseno Original: 
 En un inicio se tiene una señal triangular con amplitud de 0.5V y una frecuencia de 1kHz dicha señal se representa con la sigueinte ecuación $cos((2\pi )1000t)$
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/ef8e665b-022f-4fc4-a90b-0424c00ffe91" title="señal original" alt="Texto alternativo" width="600" height="400"/>
+  <img src="https://github.com/user-attachments/assets/47b2ccf2-907a-4043-9cbc-03d5076b7528" title="señal original" alt="Texto alternativo" width="600" height="400"/>
 </div>
 
 ### Señal Con Adición De Voltaje De Ruido Para El Dominio Del Tiempo
@@ -96,39 +96,59 @@ Se le añadió un voltaje de ruido a la señal para ver su variación tanto en l
 </div>
 
 ### Señal Coseno Original En El Dominio De La Frecuencia: 
-En esta parte se presenta el espectro de la frecuencia para la señal triangular original, tanto en su entrada como en su salida despues del filtro.
+En esta parte se presenta el espectro de la frecuencia para la señal coseno original, tanto en su entrada como en su salida despues del filtro.
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/a6d52809-4fd4-435b-934b-a3db4ef9d360" title="señal original" alt="Texto alternativo" width="600" height="400"/>
+  <img src="https://github.com/user-attachments/assets/1f8c6187-4dc3-410d-981f-d55dd8f92ddc" title="señal original" alt="Texto alternativo" width="600" height="400"/>
 </div>
 
 ### Señal Con Adición De Voltaje De Ruido Para El Dominio De La Frecuencia
 Luego de añardirle un ruido de valor 0.1V se apreció como para la señal de entrada el piso de ruido aumenta su valor hasta -60 db mientras que su salida se filtra el ruido y solo observan los valores cercanos a su potencia maxima, debido a que el filtro elimina todas las demás componentes.
 
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/1bf1869c-884e-4d78-bd68-35c0b5d9f31b" title="https://github.com/user-attachments/assets/a4914c27-8a38-4697-9267-621b9b16b2ef" alt="Texto alternativo" width="600" height="400"/>
+  <img src="https://github.com/user-attachments/assets/8bd18265-1be1-4a70-952a-d51d475dcecf" title="https://github.com/user-attachments/assets/a4914c27-8a38-4697-9267-621b9b16b2ef" alt="Texto alternativo" width="600" height="400"/>
 </div>
 
-### Señal Con Todos Los Cambios
-A continuación se puede observar una imagen con todos los cambios realizados a la señal a lo largo de la práctica, ésta señal presenta todas las alteraciones mencionadas en secciones anteriores del informe.
+### Señal De Audio
+En esta parte se utilizó una señal de audio proporcionada por el docente la cual fue analizada en el espectro de la frecuencia.
 
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/caeef924-92ac-43ab-83f7-a297721f56ad" title="Señal Con Todos Los Cambios" alt="Texto alternativo" width="600" height="400"/>
+  <img src="https://github.com/user-attachments/assets/5b1d6133-2234-4da9-a9b9-14266e3c8ccf" title="https://github.com/user-attachments/assets/a4914c27-8a38-4697-9267-621b9b16b2ef" alt="Texto alternativo" width="600" height="400"/>
 </div>
 
-### Señal Cuadrada 
-Luego de realizar el análisis de la señal coseno, se busco otro tipo de señal para verificar si su respuesta ante los cambios realizados a la señal coseno mantenian la misma tendencia, como se puede apreciar al realizar la comparación entre la señal original y aquella que posee todos los cambios, la tendencia de los cambios se mantien, tanto en la señal en el tiempo como para la señal en la frecuencia.
-
-### Señal Original
+### Señal De Audio En El Espectro De La Frecuencia
+Señal de audio original medida en el espectro de la frecuencia
 
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/c805be8a-cf7c-43be-ad02-3ed04f40b64c" title="Señal Cuadrada" alt="Texto alternativo" width="600" height="400"/>
+  <img src="https://github.com/user-attachments/assets/db1caefc-a647-4808-b892-19534e7dcbf8" title="https://github.com/user-attachments/assets/a4914c27-8a38-4697-9267-621b9b16b2ef" alt="Texto alternativo" width="600" height="400"/>
 </div>
 
-### Señal Con Todos Los Cambios
+### Señal De Audio Con Ruido
+Se le añadió un pequeño voltaje de ruido de 0.01 V, a su vez se aumento el ancho de banda a su valor maximo permitido, con estos cambios se pudo observar como la señal de audio presenta distorciones tanto en la señal de entrada como en la señal de salida incluso despues de haberle aplicado un filtro, esto se debe a que como el ancho de banda es tan grande el filtro no puede funcionar de manera correcta y permite el paso de mucha más interferencia de la esperada.
 
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/dc604f6b-c9f3-4720-8fe1-6e72a759aecb" title="Señal Con Offset De Frecuencia" alt="Texto alternativo" width="600" height="400"/>
+  <img src="https://github.com/user-attachments/assets/13c98c11-519c-4204-9443-8ebe0b064716" title="https://github.com/user-attachments/assets/a4914c27-8a38-4697-9267-621b9b16b2ef" alt="Texto alternativo" width="600" height="400"/>
 </div>
+
+### Umbral Maximo
+Se buscó el valor maximo en el espectro de la frecuencia para el cual el audio se podía llegar a entender, esto se hizo de manera iterativa con el uso de unos audiculares y distinguiendo a en que umbral se podía seguir escuchando el audio con interferencia y que a su vez el mensaje se siquiera entendiendo.
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/16f61359-8229-4e44-bf8f-5ed1225fde9d" title="https://github.com/user-attachments/assets/a4914c27-8a38-4697-9267-621b9b16b2ef" alt="Texto alternativo" width="600" height="400"/>
+</div>
+
+### Señal De Audio Con Aumento En El Ruido
+En este punto se aumento el valor del voltaje de ruido, pero reduciendo el valor de su ancho de banda, se pudo observar como la señal de salida luego de pasar por el filtro presenta menos interferencia debido a que hay menos rangos de frecuencias en los cuales la señal puede tomar componentes.
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/eb615278-c872-469e-8b43-e4e149d651ac" title="https://github.com/user-attachments/assets/a4914c27-8a38-4697-9267-621b9b16b2ef" alt="Texto alternativo" width="600" height="400"/>
+</div>
+
+### Limite De La Señal De Audio En Donde Se Puede Entender
+Se buscaron los valores de ancho de banda y ruido para los cuales la señal de audio se podía entender de manera adecuada teniendo interferencias, estos valores fueron de 0.03 V de ruido y un ancho de banda de 4.5 kHz.
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/6ce8a91d-9784-48f9-8502-e262f018f122" title="https://github.com/user-attachments/assets/a4914c27-8a38-4697-9267-621b9b16b2ef" alt="Texto alternativo" width="600" height="400"/>
+</div>}
 
 ### ¿Cómo se puede explicar matemáticamente la diferencia entre una fuente de tipo flotante y una de tipo complejo?
 Una fuente de tipo flotante se conoce también como una fuente de magnitud real, por lo que dicha fuente solo me generará valores reales, mientras que la fuente de tipo compleja me generará dos valores de magnitud, uno real y otro complejo, matematicamente se puede ver de la sigueinte manera: para una fuente flotante $x(t) = a(t)$ en donde $a(t)$ son valores unicamente reales, mientras que para una fuente compleja $x(t)=a(t)+jb(t)$
