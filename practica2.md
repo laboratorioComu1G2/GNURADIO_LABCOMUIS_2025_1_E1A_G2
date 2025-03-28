@@ -1,7 +1,7 @@
 Laboratorio de Comunicaciones
 ## Universidad Industrial de Santander
 
-# Práctica 1C. Mediciones de potencia y frecuencia
+# Práctica 2A. Modelo de canal
 
 ### Integrantes
 - **Duban Andretti Gutierrez Leon** - 2220396
@@ -20,7 +20,7 @@ Los autores de este informe certifican que el contenido aquí presentado es orig
 
 Asimismo, los autores asumen plena responsabilidad por la información contenida en este documento. 
 
-Uso de IA: En la elaboración del resumen y como fuente de investigación para insertar imagenes.
+Uso de IA: .
 ## Contenido
 
 ### Resumen
@@ -32,45 +32,27 @@ En esta práctica se estudiaron las características en el dominio del tiempo y 
 En los sistemas de comunicación de la actualidad se hace necesario un correcto análisis de las señales para garantizar que la información se transmita de manera adecuada, por lo cual es imprescindible comprender cómo afecta a la señal sus distintos parámetros tales como: las formas de onda, las fuentes de la señal y el entorno en el cual se está transmitiendo, además de considerar sus efectos en el tiempo y la frecuencia. A lo largo de este informe se tiene como objetivo analizar el comportamiento de una señal al implementarle ciertos cambios, entre estos la amplitud, la frecuencia, el ruido, la fase y su offset; todos estos cambios se podrán medir utilizando el USRP 2920 y equipos complementarios como el analizador de espectros y el osciloscopio.
 
 ### Procedimiento
-### Actividad 1: Revisión de Especificaciones de los Equipos
-   ## 1. Seleccionar Especificaciones Relevantes:
-    USRP 2920: Las especificaciones seleccionadas se muestran a continuación
-            1. Rango de frecuencia de 50 Mhz a 2.2 Ghz.
-            2. Precisión de frecuencia 2.5 ppm.
-            3. Pasos de ganancia 1.0 db.
-            4. Rango de ganancias de 0 db a 31 db.
-            5. Pasos de frecuencia menores a 1 kHz.
-            
-    Osciloscopio R&S RTB2004: Las especificaciones seleccionadas se muestran a continuación
-            1. Cantidad de canales: 4 canales analógicos.
-            2. Frecuencia de muestreo: Hasta 2.5 GSa/s.
-            3. Pantalla: Táctil capacitiva de 10.1 pulgadas, resolución 1280 x 800 píxeles.
-            4. Interfaces: USB, LAN, salida de disparo.
-            5. Ancho de banda: 70 MHz, 100 MHz, 200 MHz, hasta 300 MHz.
-
-    Analizador de Espectros R&S FPC1000: Las especificaciones seleccionadas se muestran a continuación
-            1. Rango de frecuencia: 5 kHz a 1 GHz.
-            2. Rango de atenuación 0 db a 40 db.
-            3. La entrada RF con una impedancia de 50 Ω le permite conectar un DUT al R&S FPC1000.
-            4. Precisión de frecuencia: 0.5 ppm.
-            5. Nivel de ruido de fondo (DANL): -150 dBm.
-En esta fase de la práctica se analizó el comportamiento de los dispositivos y las diferentes configuraciones que poseian, se logró determinar que para el USRP 2920 su rango de frecuencias va desde 50 Mhz hasta 2.2 Ghz mientras que para el analizador de espectros va desde 5 kHz a 1 GHz, por lo que podemos decir que el analizador de espectros nos permite trabajar con frecuencias mucho menores a las que el USRP 2920 nos permite hacerlo, por otro lado se analizó como medir la amplitud y frecuencia en el osciloscopio, esto se logra mediante los siguientes pasos, primero se ingresa la señal que se quiere analizar, luego se ajusta la división de la señal para que ésta se muestre según lo que se quiera analizar, evitando así visualizar posibles saturaciones, luego se establece en el osciloscopio los valores que se quieren medir en este caso la amplitud y frecuencia para finalmente tomar los datos requeridos.
+### Actividad 1: Actividades de simulación de canal en GNU Radio
+### Objetivo
+Familiarizarse con algunos fenómenos de canal en un ambiente simulado.
+   ## 1. Seleccionar un valor n para determinar la frecuencia de muestreo:
+Para poder iniciar con las simulaciones se requería de un valor n para determinar la frecuencia de muestreo a la cual trabajaría el sistema, por lo que para nuestro caso se utilizó un n=6 el cual fue reemplazado en la siguiente ecuación: $\frac{25e^{6}}{2^{n}}$
 ### Actividad 2: Simulación de Señales en GNU Radio
-En esta fase se visualizaron los cambios ocurridos a una señal de entrada elegida por cada grupo al alterar varios de sus parametros de manera individual, a continuación se muestra cada uno de los cambios con respecto a la imagen original y se hace una breve explicacioón de cada fenomeno ocurrido.
-### Señal Cosenoidal Original: 
-En un inicio se tiene una señal coseno con amplitud de 1V y una frecuencia de 1kHz dicha señal se representa con la sigueinte ecuación $cos((2\pi )1000t)$
+En esta fase se visualizaron los cambios ocurridos a una señal de entrada elegida por cada grupo al alterar varios de sus parametros de manera individual, a continuación se muestra cada uno de los cambios con respecto a la imagen original y se hace una breve explicación de cada fenomeno ocurrido.
+### Señal Triangular Original: 
+En un inicio se tiene una señal triangular con amplitud de 0.5V y una frecuencia de 1kHz dicha señal se representa con la sigueinte ecuación $cos((2\pi )1000t)$
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/8a1ef106-7307-4d43-96f4-98cbdbd73400" title="señal original" alt="Texto alternativo" width="600" height="400"/>
+  <img src="https://github.com/user-attachments/assets/ef8e665b-022f-4fc4-a90b-0424c00ffe91" title="señal original" alt="Texto alternativo" width="600" height="400"/>
 </div>
 
-### Señal Con Cambio En Su Amplitud:
-Al realizar el aumento en la amplitud de 1V a 4V se puede ver como la señal cosenoidal aumenta tanto en su parte real como en su componente imaginaria, además la ganancia de potencia en el espectro de la frecuencia aumenta de manera considerable.
+### Señal Con Cambio En Su Frecuencia De Corte Inferior:
+Al realizar el aumento en su frecuencia de corte inferior se pudo observar como la amplitud de la señal de salida se reducía.
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/dd62690e-d5bc-4325-92d2-31e8384a0041" title="Señal Modificada En Amplitud" alt="Texto alternativo" width="600" height="400"/>
+  <img src="https://github.com/user-attachments/assets/4075fc4d-6b3a-436f-bf60-23833daa25db" title="Señal Modificada En Amplitud" alt="Texto alternativo" width="600" height="400"/>
 </div>
 
-### Señal Con Cambio En Su Frecuencia:
-Al realizar un aumento en la frecuencia de la señal de 1kHz a 4kHz, se observa como la longitud de onda de la señal en el tiempo se disminuye y como en el espectro de la frecuencia su valor para la ganancia máxima de potencia se da en el valor de la nueva frecuencia, es decir, la ganancia máxima de potencia se logra en 4kHz.
+### Señal Con Una Reducción En La Diferencia De Sus Frecuencias De Corte:
+Al reducir de manera considerable el ancho de banda del filtro se puede observar como la señal que en su entrada es un triangular tiende a una forma senoidal con una reducción de su amplitud.
 
 <div align="center">
   <img src="https://github.com/user-attachments/assets/33d52e19-4417-4183-8425-1e4978224e8a" title="Señal Modificada En Frecuencia" alt="Texto alternativo" width="600" height="400"/>
@@ -78,10 +60,10 @@ Al realizar un aumento en la frecuencia de la señal de 1kHz a 4kHz, se observa 
 
 
 ### Señal Con Adición De Voltaje De Ruido
-Se le añadió un voltaje de ruido a la señal para ver su variación tanto en tiempo como en el espectro de frecuencia, se observa como en el tiempo resulta complicado determinar los valores que puede llegar a tomar la señal, adicionalmente la señal tiende a variar su amplitud superando sus limites tanto inferior como superior; en el espectro de la frecuencia se observa como el piso de ruido de la señal aumenta en gran medida su valor pasando de unos niveles de  casi -200 db a un nivel de -50 db
+Se le añadió un voltaje de ruido a la señal para ver su variación tanto en la entrada como en su salida luego de pasar através de un filtro, se pudo observar como en la entrada la señal presenta una dsitorción muy fuerte apesar de solo tener 0.1 V de ruido, esto se debe a que el valor de su ancho de banda es muy grande por lo que la señal captura mucho más ruido del que se podría esperar en un primer momento, al analizar la señal luego de pasar por el filtro se puede ver como ésta presenta una ligera atenuación, pero en su forma no presenta grandes camabios, esto se debe a que el filtro nos permite visualizar unicamente las componentes de la señal que queremos evitando que se muestre en la salida todo ese ruido no deseado.
 
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/fe353172-70cd-4c10-a5b9-3968c6eeba45" title="Señal Modificada En Ruido" alt="Texto alternativo" width="600" height="400"/>
+  <img src="https://github.com/user-attachments/assets/f61e2feb-43d7-49ba-ac12-bc0a5848a2ca" title="Señal Modificada En Ruido" alt="Texto alternativo" width="600" height="400"/>
 </div>
 
 ### Señal Con Offset De Frecuencia
