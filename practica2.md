@@ -161,7 +161,51 @@ La eliminación de armonicos puede llegar a afectar la señal si se eliminan los
 ### ¿Cómo se puede mejorar la relación señal a ruido en una señal?
 Una de las formas de mejorar la relación señal a ruido es el uso de filtros adecuados para eliminar el ruido fuera del ancho de banda útil, esto quiere decir que solo se reducirá su ancho de banda para evitar el paso de señales de ruido indeseadas mientras que se mantiene la cantidad de información necesaria para transmitir el mensaje.
 
-Aumentar la potencia de la señal transmitida
+### Actividad 2: Fenómenos de canal en el analizador de espectros
+1. **Configurar el USRP 2920:**
+En un inicio se configuró el flujograma dado por el docente para establecer un valor de frecuencia de muestreo adecuado para la práctica, dado que se requería ussar al siguiente fórmula: $\frac{25e^{6}}{2^{n}}$ donde n debe ser un número mayor a 2 y para nuestro caso se estableció que éste fuese de 6.
+
+2. **Configurar el Analizador de Espectros:**
+En esta sección, se empleó el analizador de espectros para observar el comportamiento de distintas señales medidas a través del mismo cable. A continuación, se presentan los cambios detectados.
+
+### Señal original
+En un inicio se mostró una señal triangular en el analizardor de espectros medida mediante la conexión con un cable coaxial, éste se pueden ver sus componentes así como los armonicos no deseados generados por el ruido.
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/db6e5237-b830-40a3-8b53-602f6d663660"  alt="Texto alternativo" width="600" height="400"/>
+</div>
+
+**Señal con ruido agregado**
+Luego de esto se le agregó 0.2 V de ruido a nuestra señal original, dando como resultado: 
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/2224e3e3-4d55-4b3e-bc95-e83360991835"  alt="Texto alternativo" width="600" height="400"/>
+</div>
+
+**Señal cosenoidal** 
+En este mismo item se estudió este mismo comportamiento pero con otro tipo de señal, en este caso, una señal cosenoidal. 
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/e47cf3fa-eabb-4dfc-8f5c-33542fc1a81b"  alt="Texto alternativo" width="600" height="400"/>
+</div>
+
+**Señal con ruido agregado**
+Luego de esto se le agregó 0.2 V de ruido a nuestra señal cosenoidal, dando como resultado: 
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/ddd455e8-240a-43f5-bc94-d618f73e0dd9"  alt="Texto alternativo" width="600" height="400"/>
+</div>
+
+
+**¿Cuál es el efecto del ruido sobre la respuesta en frecuencia de las señales medidas en el analizador de espectro? ¿Conservan las mismas relaciones que se evidencian en la simulación?**
+
+El ruido afecta la respuesta en frecuencia de las señales medidas en un analizador de espectro al elevar el piso de ruido, distorsionar los picos espectrales y reducir la relación señal a ruido (SNR), dificultando la identificación y medición de señales débiles. Esto puede provocar ensanchamiento de los picos y fluctuaciones en la amplitud, afectando la precisión en la medición de frecuencias. En comparación con la simulación, donde las señales suelen generarse en un entorno ideal sin ruido, las relaciones de amplitud y frecuencia entre los componentes espectrales deberían mantenerse en la medición real, pero con diferencias debido a atenuaciones y distorsiones del sistema de medición. En la simulación, los espectros aparecen más definidos y sin interferencias, mientras que en la medición real el ruido puede dificultar la interpretación. Para una comparación más precisa, sería ideal analizar ambos espectros en detalle.
+
+**¿La relación señal a ruido creada intencionalmente desde el computador se amplifica o se reduce en la señal observada en el analizador de espectro?**
+
+La SNR tiende a reducirse, ya que la señal sufre atenuaciones, interferencias y la adición de ruido térmico o electromagnético al pasar por los componentes del sistema de medición.
+
+**¿Qué modelo de canal básico describe mejor las mediciones obtenidas en la práctica?**
+
+El modelo de canal básico que mejor describe las mediciones obtenidas en la práctica es el canal aditivo con ruido blanco gaussiano, ya que en muchas aplicaciones de medición, el ruido térmico y electrónico presente en el sistema de adquisición de señales puede modelarse como un proceso gaussiano de media cero y potencia constante en todo el espectro de frecuencias.Este modelo representa de manera adecuada cómo una señal transmitida desde el computador es afectada por ruido aleatorio a lo largo del sistema de medición, incluyendo los cables, conectores y el propio analizador de espectro.
+
 ### Actividad 3: Fenómenos de canal en el analizador de espectros
 
 ### Objetivo
@@ -194,23 +238,17 @@ De manera general se puede decir que efectivamente la respuesta en frecuencia de
 
 
 ### Actividad 4: Análisis de Resultados y Conclusiones
+**¿Cuál es el efecto del ruido sobre la respuesta en frecuencia de las señales medidas en el analizador de espectro?**
+El ruido es un factor determinante en la medición de señales en el dominio de la frecuencia, ya que puede afectar significativamente la precisión y confiabilidad de los resultados obtenidos con un analizador de espectro. En términos generales, el ruido eleva el piso de ruido del sistema, lo que reduce la relación señal a ruido (SNR) y dificulta la detección de señales débiles o de baja amplitud. Además, el ruido puede ocasionar el ensanchamiento de los picos espectrales y generar fluctuaciones en la amplitud de las señales medidas, lo que puede llevar a errores en la identificación de frecuencias y en la medición de la potencia de los armónicos o componentes espectrales. En condiciones de alto ruido, algunas señales pueden quedar ocultas dentro del piso de ruido, lo que hace que su detección y análisis sean más complicados.
 
-Durante la práctica se realizaron diversas mediciones mediante simulaciones en GNU Radio y transmisiones reales de USRP 2920, un osciloscopio R&S RTB2004 y un analizador de espectro R&S FPC1000. En las simulaciones se observó una representación precisa de la señal en los dominios de tiempo y frecuencia, permitiendo identificar claramente picos, armónicos y cambios de fase. Sin embargo, en las mediciones reales se encontraron algunas diferencias debido a las características del propio equipo, como el efecto de detección automática del analizador de espectro y la supresión de componentes DC.
+En conclusión, el ruido tiene un impacto negativo en la respuesta en frecuencia de un sistema, ya que introduce incertidumbre en las mediciones y puede alterar la interpretación de los resultados obtenidos en el analizador de espectro. Para minimizar su efecto, es recomendable utilizar técnicas de filtrado, promedios de medición o mejorar la calidad del equipo y la calibración del sistema de medición.
 
-La comparación entre los resultados de la simulación y los obtenidos en el laboratorio muestra que el osciloscopio proporciona una vista detallada de la forma de onda en el dominio del tiempo, mientras que el analizador de espectro proporciona información valiosa sobre la distribución de energía y la presencia de armónicos en el dominio de la frecuencia. Además, encontramos que los cambios en parámetros como el tipo de datos, la forma de onda, la frecuencia, la fase y la amplitud tienen un impacto directo en la representación del espectro, validando la importancia de ajustar estos parámetros para lograr mediciones precisas.
-El análisis de la relación señal-ruido (SNR) revela la importancia de mantener un nivel de ruido bajo. En nuestra práctica, el ruido de fondo normalizado medido fue de -82 dBm, lo que indica un ambiente relativamente limpio. Sin embargo, es importante destacar que si la potencia de la señal está demasiado cerca de este valor, su correcta detección puede resultar difícil.
+**¿Conservan las mismas relaciones que se evidencian en la simulación?**
+En la simulación, las señales suelen modelarse en un entorno ideal donde no hay interferencias, distorsiones ni ruido, lo que permite observar con claridad las relaciones entre los diferentes componentes espectrales, como sus amplitudes relativas y sus posiciones en frecuencia. Sin embargo, en una medición real, las condiciones del sistema pueden generar discrepancias respecto a la simulación debido a diversos factores, como la presencia de ruido, las pérdidas en los circuitos, la respuesta no ideal de los instrumentos de medición y las limitaciones del equipo.
 
-### ¿Qué limitaciones tienen los equipos utilizados en términos de ancho de banda y precisión en las mediciones?
+Si bien en un escenario ideal las relaciones entre los componentes espectrales deberían mantenerse tanto en la simulación como en la medición real, en la práctica pueden presentarse diferencias. Factores como la distorsión no lineal, las variaciones en la impedancia del sistema y la interferencia externa pueden modificar la amplitud y forma de los espectros obtenidos.
 
-
-El equipo utilizado tiene limitaciones inherentes en cuanto a ancho de banda y precisión de medición. Por ejemplo, el USRP 2920 está limitado por su rango operativo y resolución de medición, lo que puede dificultar la captura de señales de alta frecuencia o señales con transiciones muy rápidas. En el caso de un osciloscopio, depende de su frecuencia de muestreo y ancho de banda máximo, lo que puede limitar la fidelidad de la representación de señales complejas. Además, los analizadores de espectro, aunque permiten ajustar el ancho de banda de resolución, todavía introducen efectos como la supresión continua de componentes (desplazamiento de CC) y se ven afectados por el ruido de fondo, lo que afecta la precisión de las mediciones del nivel de potencia. Estas limitaciones enfatizan la importancia de comprender las características y limitaciones de cada instrumento para interpretar correctamente los resultados experimentales.
-
-
-### ¿Qué aplicaciones prácticas tienen las mediciones de potencia y ancho de banda en sistemas de comunicaciones reales?
-
-Las mediciones de potencia y ancho de banda son cruciales en los sistemas de comunicación reales, ya que optimizan la calidad de la transmisión y el uso del espectro. Por un lado, medir la potencia ayuda a garantizar que la señal transmitida esté en el nivel adecuado para superar las pérdidas y el ruido ambiental, lo cual es fundamental para mantener una buena relación señal-ruido (SNR) y comunicaciones confiables. Por otro lado, medir el ancho de banda es fundamental para evaluar la capacidad del canal para transmitir información, de modo que se puedan diseñar filtros y estrategias de modulación para maximizar la eficiencia espectral y minimizar la interferencia con otros sistemas. En aplicaciones como redes móviles, televisión digital o comunicaciones Wi-Fi, estos parámetros son cruciales para cumplir con la normativa, asegurar la calidad del servicio y optimizar el rendimiento general del sistema de comunicación.
-</div>
-
+En conclusión, aunque la simulación proporciona una referencia teórica del comportamiento de la señal en el dominio de la frecuencia, la medición real puede presentar desviaciones debido a efectos prácticos que no siempre se consideran en el modelo teórico. 
 ### Referencias
 
 - https://ieeexplore.ieee.org
