@@ -1,7 +1,7 @@
 Laboratorio de Comunicaciones
 ## Universidad Industrial de Santander
 
-# Práctica 2A. Modelo de canal
+# Práctica 5. Modulaciones Digitales Y De Pulsos
 
 ### Integrantes
 - **Duban Andretti Gutierrez Leon** - 2220396
@@ -11,7 +11,7 @@ Escuela de Ingenierías Eléctrica, Electrónica y de Telecomunicaciones
 Universidad Industrial de Santander
 
 ### Fecha
-28 de marzo de 2025
+21 de mayo de 2025
 
 ---
 
@@ -20,7 +20,7 @@ Los autores de este informe certifican que el contenido aquí presentado es orig
 
 Asimismo, los autores asumen plena responsabilidad por la información contenida en este documento. 
 
-Uso de IA: Se usó una IA para generar ideas acerca de la construcción del resumen y la introducción.
+Uso de IA: No se usó IA.
 ## Contenido
 
 ### Resumen
@@ -34,41 +34,81 @@ En el mundo de las telecomunicaciones, cuando enviamos señales digitales por un
 El objetivo de esta práctica es crear un modelo de canal que nos ayude a estudiar cómo se comporta la señal en distintas condiciones de transmisión. A través de simulaciones y analisis de los resultados, queremos entender mejor cómo estos factores afectan la señal y ver qué soluciones podrían mejorar su calidad. Este tipo de estudios es clave para diseñar sistemas de comunicación más eficientes y resistentes a las interferencias.
 
 ### Procedimiento
-### Actividad 1: Actividades de simulación de canal en GNU Radio
+### Actividad 1
 ### Objetivo
-Familiarizarse con algunos fenómenos de canal en un ambiente simulado.
 
-   ## 1. Seleccionar un valor n para determinar la frecuencia de muestreo:
-Para poder iniciar con las simulaciones se requería de un valor n para determinar la frecuencia de muestreo a la cual trabajaría el sistema, por lo que para nuestro caso se utilizó un n=6 el cual fue reemplazado en la siguiente ecuación: $\frac{25e^{6}}{2^{n}}$
+### Figura 1. Señal Senoidal: 
+En un inicio se tiene una señal senoidal con un ancho de pulso de 20 y una frecuencia de pulso de 1kHz.
+En la figura 1 se puede observar una modulación de una señal senoidal mediante un tren de pulsos.  
+Se buscó establecer un valor de `samprate`, por lo que sabiendo el valor de  
+**F<sub>pulsos</sub> = 1000 Hz**, se estableció un `samprate = 100 kHz`.
 
-### Actividad 2: Simulación de Señales en GNU Radio
-En esta fase se visualizaron los cambios ocurridos a una señal de entrada elegida por cada grupo al alterar varios de sus parametros de manera individual, a continuación se muestra cada uno de los cambios con respecto a la imagen original y se hace una breve explicación de cada fenomeno ocurrido.
+Luego se estableció un ancho de pulso de **20 µs**, esto con el fin de permitirle al pulso funcionar durante este tiempo y establecer un ciclo útil bajo, para ver cómo se afectaba en el espectro de la frecuencia.  
+En este se puede observar cómo la señal senoidal presenta dos impulsos centrados alrededor de la frecuencia del mensaje, concentrando toda la potencia en ese punto.
 
-### Señal Triangular Original: 
-En un inicio se tiene una señal triangular con amplitud de 0.5V y una frecuencia de 1kHz.
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/ef8e665b-022f-4fc4-a90b-0424c00ffe91" title="señal original" alt="Texto alternativo" width="600" height="400"/>
+  <img src="https://github.com/user-attachments/assets/364f9606-1386-4d8f-ade6-475a715357af" title="señal original" alt="Texto alternativo" width="600" height="400"/>
 </div>
 
-### Señal Con Cambio En Su Frecuencia De Corte Inferior:
-Al realizar el aumento en su frecuencia de corte inferior se pudo observar como la amplitud de la señal de salida se reducía.
+### Figura 2. Señal Cuadrada:
+Para esta señal se usaron los mismos parámetros usados previamente para el análisis de la figura 1.  
+El único cambio que se realizó fue su frecuencia del mensaje, la cual bajó de **240 Hz** a **100 Hz**.  
+En el espectro se presenta una mayor dispersión y más armónicos, debido a la naturaleza discontinua de la señal cuadrada.  
+Esto se refleja en un mayor ancho de banda comparado con la senoidal.
+
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/644ec085-c100-47d6-bd15-b38834f52956" title="Señal Modificada En Amplitud" alt="Texto alternativo" width="600" height="400"/>
+  <img src="https://github.com/user-attachments/assets/d9186830-25a3-4003-a164-123daa17918b" title="Señal Modificada En Amplitud" alt="Texto alternativo" width="600" height="400"/>
 </div>
 
-### Señal Con Una Reducción En La Diferencia De Sus Frecuencias De Corte:
-Al reducir de manera considerable el ancho de banda del filtro se puede observar como la señal que en su entrada es un triangular tiende a una forma senoidal con una reducción de su amplitud.
+### Figura 3. Señal Triangular
+Para esta señal se usaron los parámetros del análisis de la figura 2.  
+En el espectro de la señal podemos observar que la señal triangular genera un espectro más suave en comparación con la señal cuadrada.  
+Además, se observan componentes en baja frecuencia con armónicos que decrecen de manera muy rápida.
 
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/0574fee2-f627-4bdc-b92e-e0614ecbee42" title="Señal Modificada En Frecuencia" alt="Texto alternativo" width="600" height="400"/>
+  <img src="https://github.com/user-attachments/assets/d34d1675-2122-4e42-8baa-b54283ce5125" title="Señal Modificada En Frecuencia" alt="Texto alternativo" width="600" height="400"/>
 </div>
 
+### Cálculo del Ciclo Útil
+| Tipo de Señal | Frec. Mensaje (Hz) | Frec. Pulsos (Hz) | Ancho Pulso (μs) | Ciclo Útil (%) |
+|---------------|--------------------|--------------------|-------------------|-----------------|
+| Senoidal      | 240                | 1000               | 20                | 2               |
+| Cuadrada      | 100                | 1000               | 20                | 2               |
+| Triangular    | 100                | 1000               | 20                | 2               |
 
-### Señal Con Adición De Voltaje De Ruido Para El Dominio Del Tiempo
-Se le añadió un voltaje de ruido a la señal para ver su variación tanto en la entrada como en su salida luego de pasar através de un filtro, se pudo observar como en la entrada la señal presenta una distorción muy fuerte apesar de solo tener 0.1 V de ruido, esto se debe a que el valor de su ancho de banda es muy grande por lo que la señal captura mucho más ruido del que se podría esperar en un primer momento, al analizar la señal luego de pasar por el filtro se puede ver como ésta presenta una ligera atenuación, pero en su forma no presenta grandes camabios, esto se debe a que el filtro nos permite visualizar unicamente las componentes de la señal que queremos evitando que se muestre en la salida todo ese ruido no deseado.
+### Actividad 2:
+En esta actividad se buscaba multiplexar 4 señales distintas y luego realizar la recuperación de cada una de estas, además se busca analizar qué sucede al agregar otra señal a la multiplexación.
 
+Al momento de realizar una multiplexación se deben tener en cuenta los siguientes aspectos, primero el ancho del pulso, ya que éste depende del número de canales que esté usando, para el caso de 4, necesito un ancho del pulso de 25, pero para el caso de los 5 canales se necesita un ancho del pulso de 20, esto me permite evitar posibles interferencias entre canales; como segundo aspecto se tienen que tener en cuenta sus retardos los cuales están equiespaciados para evitar que un canal se sobreponga con otro, la distancia a la que están separados es del mismo valor que el ancho del pulso, ya por último se tiene en cuenta la señal de selección la cual tomará valores n*ancho del pulso para ir recuperando cada uno de los canales.
+
+## Figura 4: Multiplexación Con 4 Canales:
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/f61e2feb-43d7-49ba-ac12-bc0a5848a2ca" title="Señal Modificada En Ruido" alt="Texto alternativo" width="600" height="400"/>
+  <img src="https://github.com/user-attachments/assets/3d1c8633-827c-465e-9236-00c974f8dbf1" title="Señal Modificada En Ruido" alt="Texto alternativo" width="600" height="400"/>
+</div>
+
+## Figura 5: Recuperación de la señal coseno con Rx = 0
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/95946569-8650-461a-a876-5935acc4e318" title="Señal Modificada En Ruido" alt="Texto alternativo" width="600" height="400"/>
+</div>
+
+## Figura 6: Recuperación de la señal dientes de sierra con Rx = 25
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/7a5efb95-c974-4695-86e7-a56a1579172d" title="Señal Modificada En Ruido" alt="Texto alternativo" width="600" height="400"/>
+</div>
+
+## Figura 7: Recuperación de la señal triangular con Rx = 50
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/fb4628b4-5da1-4a9c-b849-e5d296667a51" title="Señal Modificada En Ruido" alt="Texto alternativo" width="600" height="400"/>
+</div>
+
+## Figura 8: Recuperación de la señal cuadrada con Rx = 75
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/b2dbcc1c-4280-4727-9685-b369408892ce" title="Señal Modificada En Ruido" alt="Texto alternativo" width="600" height="400"/>
+</div>
+
+## Figura 9: Multiplexación con 5 canales
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/cda40712-b67c-4775-9feb-c3f0426e47e5" title="Señal Modificada En Ruido" alt="Texto alternativo" width="600" height="400"/>
 </div>
 
 ### Señal Triangular Original En El Dominio De La Frecuencia: 
